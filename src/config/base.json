@@ -1,0 +1,16 @@
+{
+  "hisName": "",
+  "herName": "",
+  "date": "",
+  "address": {
+    "name": "",
+    "extra": "",
+    "town": "",
+    "postcode": ""
+  },
+  "color": {
+    "primary": "#",
+    "secondary": "",
+    "text": "#"
+  }
+}

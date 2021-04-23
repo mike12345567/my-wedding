@@ -1,0 +1,10 @@
+/node_modules/
+/public/build/
+
+src/config/mine.json
+
+.yarn-error.log
+
+.idea/
+
+.DS_Store
