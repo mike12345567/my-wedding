@@ -1,0 +1,17 @@
+{
+  "name": "my-wedding-server",
+  "version": "0.1.0",
+  "description": "Server for my wedding",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "koa": "^2.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

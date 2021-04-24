@@ -1,7 +1,7 @@
-/node_modules/
-/public/build/
+node_modules/
+public/build/
 
-src/config/mine.json
+mine.json
 
 .yarn-error.log
 
