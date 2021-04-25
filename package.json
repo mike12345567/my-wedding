@@ -9,7 +9,10 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "dev": "lerna link && lerna run --parallel dev",
+    "server:install": "cd packages/server && yarn install",
+    "site:install": "cd packages/site && yarn install",
+    "bootstrap": "yarn && yarn server:install && yarn site:install",
+    "dev": "lerna run --parallel dev",
     "format": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,svelte}\""
   }
 }

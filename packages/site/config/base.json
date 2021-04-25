@@ -10,7 +10,10 @@
   },
   "color": {
     "primary": "#",
-    "secondary": "",
+    "secondary": "#",
     "text": "#"
+  },
+  "server": {
+    "port": 5001
   }
 }
