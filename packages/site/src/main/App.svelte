@@ -18,7 +18,7 @@
     <h1>{herName} & {hisName} are getting married!</h1>
     <h3>Its happening at {address.name} in {address.town}</h3>
     <p>{daysUntil} until the big day</p>
-    <img src="/../../public/images/floral-heart.svg" alt="floral heart">
+    <img src="/img/floral-heart.svg" alt="floral heart">
   </div>
 </main>
 
