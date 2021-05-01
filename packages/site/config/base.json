@@ -8,7 +8,13 @@
     "town": "",
     "postcode": ""
   },
-  "color": {
+  "images": {
+    "directory": "",
+    "venueLarge": "",
+    "venueMedium": "",
+    "custom": {}
+  },
+  "colors": {
     "primary": "#",
     "secondary": "#",
     "text": "#"
