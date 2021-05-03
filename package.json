@@ -11,8 +11,9 @@
   "scripts": {
     "server:install": "cd packages/server && yarn install",
     "site:install": "cd packages/site && yarn install",
-    "bootstrap": "yarn && yarn server:install && yarn site:install",
+    "bootstrap": "yarn && yarn symlink && yarn server:install && yarn site:install",
     "dev": "lerna run --parallel dev",
-    "format": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,svelte}\""
+    "format": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,svelte}\"",
+    "symlink": "./scripts/symlink.sh"
   }
 }
