@@ -9,3 +9,7 @@ export function getTimeUntil(date) {
   const millisecondDiff = dayjs(date).diff(Date.now())
   return dayjs.duration(millisecondDiff, "milliseconds").humanize()
 }
+
+export function formatDate(date, format) {
+  return dayjs(date).format(format)
+}
