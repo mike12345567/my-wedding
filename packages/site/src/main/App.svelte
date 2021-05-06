@@ -1,20 +1,31 @@
-<svelte:head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-</svelte:head>
-
 <script>
   import { config } from "../common/config"
   import { getTimeUntil, formatDate } from "../common/date"
   import { Images } from "../common/images"
 
   const date = config.getDate()
-  const ukDate = new Date(config.getDate()).toSt
+  const ukDate = new Date(config.getDate()).toString()
   const colors = config.getColors()
 
   $: daysUntil = date ? getTimeUntil(date) : "No date provided"
 </script>
 
-<main style="--primary-color: {colors.primary}; --text-color: {colors.text}">
+{@html `<style>
+    @font-face {
+      font-family: ${config.getPrimaryFont().name};
+      src: url(${config.getPrimaryFont().url});
+    }
+    @font-face {
+      font-family: ${config.getSecondaryFont().name};
+      src: url(${config.getSecondaryFont().url});
+    }
+</style>`}
+
+
+<main style="--primary-color: {colors.primary};
+ --text-color: {colors.text};
+ --primary-font: {config.getPrimaryFont().name};
+ --secondary-font: {config.getSecondaryFont().name}">
   <div class="body">
     <div class="header">
       <img src="{Images.LOGO}" height="100%" alt="floral heart">
@@ -65,7 +76,7 @@
   }
 
   .textWrapper {
-    font-family: Affectionately, sans-serif;
+    font-family: var(--primary-font), sans-serif;
     top: 15%;
     width: 40%;
     left: 50%;

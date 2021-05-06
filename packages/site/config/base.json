@@ -19,6 +19,10 @@
     "secondary": "#",
     "text": "#"
   },
+  "fonts": {
+    "primary": { "name":  "", "url": "" },
+    "secondary": { "name":  "", "url": "" }
+  },
   "server": {
     "port": 5001
   }

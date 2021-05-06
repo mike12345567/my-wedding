@@ -21,6 +21,12 @@ export const config = {
     }
     return `/${CONFIG.images.directory}/${path}`
   },
+  getPrimaryFont: () => {
+    return CONFIG.fonts.primary
+  },
+  getSecondaryFont: () => {
+    return CONFIG.fonts.secondary
+  },
   getAddress: () => {
     return CONFIG.address
   },
