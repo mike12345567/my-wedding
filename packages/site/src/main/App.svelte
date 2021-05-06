@@ -92,9 +92,9 @@
   .venue {
     opacity: 0.7;
     position: fixed;
-    bottom: -16vw;
-    width: 96%;
-    left: 2%;
+    bottom: -20vw;
+    width: 104%;
+    left: -2%;
   }
 
   @media only screen and (max-width: 640px) {
