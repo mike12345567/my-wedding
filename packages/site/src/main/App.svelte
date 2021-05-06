@@ -86,13 +86,15 @@
   }
 
   .textWrapper p {
-      font-size: 1.6em;
+    font-size: 1.6em;
   }
 
   .venue {
     opacity: 0.7;
-    position: absolute;
-    top: -50px;
+    position: fixed;
+    bottom: -16vw;
+    width: 96%;
+    left: 2%;
   }
 
   @media only screen and (max-width: 640px) {
@@ -113,7 +115,7 @@
     }
 
     .header img {
-      margin-left: 0px;
+      margin-left: 0;
       float: none;
     }
   }
