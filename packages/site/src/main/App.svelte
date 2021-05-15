@@ -2,6 +2,7 @@
   import { config } from "../common/config"
   import { getTimeUntil, formatDate } from "../common/date"
   import { Images } from "../common/images"
+  import Header from "../components/Header"
 
   const date = config.getDate()
   const ukDate = new Date(config.getDate()).toString()
