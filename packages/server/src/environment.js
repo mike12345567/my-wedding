@@ -8,5 +8,6 @@ module.exports = {
   POSTGRES_USER: process.env.POSTGRES_USER,
   POSTGRES_PASSWORD: process.env.POSTGRES_PASSWORD,
   POSTGRES_DB: process.env.POSTGRES_DB,
+  SECRET_KEY: process.env.SECRET_KEY,
   POSTGRES_URL: process.env.POSTGRES_URL || "localhost:5432",
 }
