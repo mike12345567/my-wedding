@@ -26,5 +26,4 @@ exports.getCookie = (ctx, name) => {
     return cookie
   }
   return jwt.verify(cookie, env.SECRET_KEY)
-
 }

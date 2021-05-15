@@ -6,13 +6,19 @@ const validateMiddleware = require("koa-joi-validate-middleware")
 const router = Router()
 
 function getCheckPasswordValidation() {
-  validateMiddleware.create({
+  return validateMiddleware.create({
     body: Joi.object({
       password: Joi.string().required(),
-    }).unknown(false).required(),
+    })
+      .unknown(false)
+      .required(),
   })
 }
 
-router.post("/api/password/check", getCheckPasswordValidation(), controller.checkPassword)
+router.post(
+  "/api/password/check",
+  getCheckPasswordValidation(),
+  controller.checkPassword
+)
 
 module.exports = router

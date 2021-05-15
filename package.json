@@ -6,7 +6,11 @@
   "author": "mike12345567 <me@michaeldrury.co.uk>",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "eslint": "^7.26.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.0",
+    "prettier-plugin-svelte": "^2.3.0",
+    "svelte": "^3.38.2"
   },
   "scripts": {
     "server:install": "cd packages/server && yarn install",

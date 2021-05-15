@@ -8,8 +8,9 @@ module.exports = (noAuthPatterns = []) => {
   return async (ctx, next) => {
     const url = ctx.request.url.toLowerCase()
     const method = ctx.request.method.toLowerCase()
-    const matched = noAuthPatterns.find(pattern =>
-      method === pattern.method.toLowerCase() && url.includes(pattern.route)
+    const matched = noAuthPatterns.find(
+      pattern =>
+        method === pattern.method.toLowerCase() && url.includes(pattern.route)
     )
     if (matched) {
       return next()

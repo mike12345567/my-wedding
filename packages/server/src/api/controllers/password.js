@@ -13,5 +13,5 @@ exports.checkPassword = async ctx => {
     loggedInAt: Date.now(),
     userId: v4(),
   }
-  setCookie(ctx, value,  LOGGED_IN_COOKIE)
+  setCookie(ctx, value, LOGGED_IN_COOKIE)
 }

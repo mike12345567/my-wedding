@@ -35,5 +35,5 @@ export const config = {
   },
   getColors: () => {
     return CONFIG.colors
-  }
+  },
 }
