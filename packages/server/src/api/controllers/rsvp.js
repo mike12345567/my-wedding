@@ -1,11 +1,18 @@
+const db = require("../../db")
+
 exports.save = async ctx => {
   const { email, guests } = ctx.request.body
+  await db.saveRsvp(email, guests)
   ctx.body = {
-    message: "Rsvp saved"
+    message: "Rsvp saved",
   }
 }
 
 exports.find = async ctx => {
   const { email } = ctx.params
-  ctx.body = {}
+  ctx.body = await db.findRsvp(email)
+}
+
+exports.allRsvp = async ctx => {
+  ctx.body = await db.allRsvp()
 }

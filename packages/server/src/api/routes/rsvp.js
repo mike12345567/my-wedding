@@ -2,6 +2,7 @@ const Router = require("@koa/router")
 const controller = require("../controllers/rsvp")
 const Joi = require("joi")
 const validateMiddleware = require("koa-joi-validate-middleware")
+const admin = require("../../middleware/admin")
 const { getMealTypes } = require("../../constants")
 
 const router = Router()
@@ -21,11 +22,9 @@ function getRsvpSaveValidation() {
   })
 }
 
-router.post(
-  "/api/rsvp",
-  getRsvpSaveValidation(),
-  controller.save
-)
+router
+  .post("/api/rsvp", getRsvpSaveValidation(), controller.save)
   .get("/api/rsvp/:email", controller.find)
+  .get("/api/rsvp/all", admin, controller.allRsvp)
 
 module.exports = router
