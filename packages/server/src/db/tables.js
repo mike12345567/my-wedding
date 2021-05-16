@@ -4,10 +4,14 @@ exports.TableNames = {
 
 exports.rsvp = async builder => {
   const name = exports.TableNames.RSVP
-  return builder.schema.createTableIfNotExists(name, table => {
+  // table exists, no need to continue
+  if (await builder.schema.hasTable(name)) {
+    return
+  }
+  return builder.schema.createTable(name, table => {
     table.increments("id")
     table.string("email")
-    table.primary(["email"])
     table.json("guests")
+    table.unique(["email"])
   })
 }

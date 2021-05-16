@@ -9,7 +9,7 @@ const serve = require("koa-static")
 const compress = require("koa-compress")
 const authMiddleware = require("./middleware/cookie")
 const zlib = require("zlib")
-const api = require("./api/routes")
+const api = require("./api")
 const { join } = require("path")
 
 const mainRouter = new Router()
