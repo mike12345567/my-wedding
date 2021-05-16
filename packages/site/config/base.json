@@ -8,6 +8,12 @@
     "town": "",
     "postcode": ""
   },
+  "meals": [
+    {
+      "type": "",
+      "details": ""
+    }
+  ],
   "images": {
     "directory": "",
     "venueLarge": "",
