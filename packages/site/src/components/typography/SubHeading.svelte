@@ -4,7 +4,7 @@
 </script>
 
 <span>
-  <Text primary={primary}>
+  <Text {primary}>
     <slot />
   </Text>
 </span>

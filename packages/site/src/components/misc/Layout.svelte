@@ -7,7 +7,8 @@
 
 <div
   style="align-content:{alignContent};justify-items:{justifyItems};"
-  class="container gap-{!noGap && gap}">
+  class="container gap-{!noGap && gap}"
+>
   <slot />
 </div>
 
