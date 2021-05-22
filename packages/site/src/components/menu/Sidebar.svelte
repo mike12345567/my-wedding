@@ -4,7 +4,7 @@
 
 <aside class="absolute w-full h-full border-r-2 shadow-lg" class:open>
   <nav class="p-12 text-xl">
-    <br>
+    <br />
     <a class="block" href="#about">About</a>
     <a class="block" href="#contact">Contact</a>
   </nav>

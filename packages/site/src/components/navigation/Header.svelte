@@ -1,16 +1,13 @@
 <script>
-  import {
-    Sidebar,
-    Hamburger,
-  } from "../"
+  import { Sidebar, Hamburger } from "../"
   import { Images } from "../../common/images"
 
   let open = false
 </script>
 
-<Sidebar bind:open/>
+<Sidebar bind:open />
 <div class="hamburger">
-  <Hamburger bind:open/>
+  <Hamburger bind:open />
 </div>
 <div class="header">
   <img src={Images.LOGO} height="100%" alt="floral heart" />

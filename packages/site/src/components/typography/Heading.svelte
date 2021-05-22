@@ -5,7 +5,7 @@
 </script>
 
 <span>
-  <Text primary={!secondary} shadow={shadow}>
+  <Text primary={!secondary} {shadow}>
     <slot />
   </Text>
 </span>
