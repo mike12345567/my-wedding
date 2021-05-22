@@ -6,10 +6,13 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=production node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev:start": "node scripts/start.js",
+    "dev:stop": "node scripts/stop.js",
+    "dev": "yarn dev:start && nodemon src/index.js"
   },
   "dependencies": {
     "@koa/router": "^10.0.0",
+    "docker-compose": "^0.23.10",
     "dotenv": "^9.0.2",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
