@@ -12,6 +12,7 @@
         <a class="block" href="#venue">Venue</a>
         <a class="block" href="#schedule">Schedule</a>
         <a class="block" href="#gifts">Gifts</a>
+        <a class="block" href="#rsvp">RSVP</a>
       </Layout>
     </div>
   </nav>
