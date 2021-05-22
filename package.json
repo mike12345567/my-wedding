@@ -19,5 +19,6 @@
     "dev": "yarn bootstrap && lerna run --parallel dev",
     "format": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,svelte}\"",
     "symlink": "./scripts/symlink.sh"
-  }
+  },
+  "dependencies": {}
 }

@@ -15,8 +15,16 @@
   button {
     background-color: var(--primary-color);
     color: var(--text-color);
-
     border: 2px solid var(--text-color);
     border-radius: 5px;
+    padding: 3px;
+  }
+
+  button:hover {
+    filter: brightness(90%);
+  }
+
+  button:active {
+    filter: brightness(80%);
   }
 </style>

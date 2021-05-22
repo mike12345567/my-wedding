@@ -8,6 +8,7 @@
     SubHeading,
     Text,
     Layout,
+    Header,
   } from "../components"
 
   const date = config.getDate()
@@ -36,15 +37,13 @@
  --primary-font: {config.getPrimaryFont().name};
  --secondary-font: {config.getSecondaryFont().name}"
 >
+  <Header />
   <div class="body">
-    <div class="header">
-      <img src={Images.LOGO} height="100%" alt="floral heart" />
-    </div>
     <div class="heading">
-      <Heading>
+      <Heading shadow>
         {config.getHerName()} & {config.getHisName()}
       </Heading>
-      <Text size="L">
+      <Text size="M" shadow weight="600">
         We can't wait to share our big day with you.
       </Text>
     </div>
@@ -60,11 +59,11 @@
       <Text size="L">
         {formatDate(date, "dddd, MMMM D, YYYY")}
       </Text>
-      <Button width="60%">Respond Here</Button>
+      <Button width="40%">Respond Here</Button>
     </Layout>
   </div>
   <div class="corner">
-    <img src={Images.CORNER} height="300px" alt="corner" />
+    <img src={Images.CORNER} alt="corner" />
   </div>
 </main>
 
@@ -80,11 +79,6 @@
     padding: 1em;
     margin: 0 auto;
     overflow: hidden;
-  }
-
-  .header {
-    width: 100%;
-    height: 10%;
   }
 
   .left {
@@ -106,18 +100,11 @@
     color: var(--text-color);
   }
 
-  .header img {
-    width: 128px;
-    margin-right: 30px;
-    margin-top: 10px;
-    float: right;
-  }
-
   .heading {
     left: 4em;
     position: absolute;
     z-index: 1;
-    top: 3em;
+    bottom: 3em;
     color: white;
     text-align: left;
   }
@@ -131,16 +118,12 @@
 
   .corner img {
     transform-origin: bottom right;
+    height: 300px;
   }
 
   @media only screen and (max-width: 640px) {
     main {
       max-width: none;
-    }
-
-    .header img {
-      margin-left: 0;
-      float: none;
     }
   }
 </style>
