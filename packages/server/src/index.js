@@ -44,7 +44,7 @@ mainRouter
       {
         method: "GET",
         route: "/",
-      }
+      },
     ])
   )
   .use(api.routes())

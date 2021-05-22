@@ -10,8 +10,8 @@
   $: daysUntil = date ? getTimeUntil(date) : "No date provided"
 </script>
 
-<!-- prettier-ignore -->
-{@html `<style>
+{@html
+  `<style>
     @font-face {
       font-family: ${config.getPrimaryFont().name};
       src: url(${config.getPrimaryFont().url});
@@ -20,8 +20,8 @@
       font-family: ${config.getSecondaryFont().name};
       src: url(${config.getSecondaryFont().url});
     }
-</style>`}
-
+  </style>`
+}
 
 <main
   style="--primary-color: {colors.primary};

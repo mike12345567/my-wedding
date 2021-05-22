@@ -1,0 +1,2 @@
+# ignore main file, doesn't play nice with html svelte tag
+packages/site/src/main/App.svelte
