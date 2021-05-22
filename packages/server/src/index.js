@@ -33,6 +33,18 @@ mainRouter
         method: "POST",
         route: "/api/password/check",
       },
+      {
+        method: "GET",
+        route: "/assets/",
+      },
+      {
+        method: "GET",
+        route: "/build/",
+      },
+      {
+        method: "GET",
+        route: "/",
+      }
     ])
   )
   .use(api.routes())
