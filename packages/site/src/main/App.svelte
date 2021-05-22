@@ -10,7 +10,18 @@
   $: daysUntil = date ? getTimeUntil(date) : "No date provided"
 </script>
 
-{@html `<style ✂prettier:content✂="CiAgICBAZm9udC1mYWNlIHsKICAgICAgZm9udC1mYW1pbHk6ICR7Y29uZmlnLmdldFByaW1hcnlGb250KCkubmFtZX07CiAgICAgIHNyYzogdXJsKCR7Y29uZmlnLmdldFByaW1hcnlGb250KCkudXJsfSk7CiAgICB9CiAgICBAZm9udC1mYWNlIHsKICAgICAgZm9udC1mYW1pbHk6ICR7Y29uZmlnLmdldFNlY29uZGFyeUZvbnQoKS5uYW1lfTsKICAgICAgc3JjOiB1cmwoJHtjb25maWcuZ2V0U2Vjb25kYXJ5Rm9udCgpLnVybH0pOwogICAgfQo=" ✂prettier:content✂="" ✂prettier:content✂="" ✂prettier:content✂="" ✂prettier:content✂="" ✂prettier:content✂=""></style>`}
+<!-- prettier-ignore -->
+{@html `<style>
+    @font-face {
+      font-family: ${config.getPrimaryFont().name};
+      src: url(${config.getPrimaryFont().url});
+    }
+    @font-face {
+      font-family: ${config.getSecondaryFont().name};
+      src: url(${config.getSecondaryFont().url});
+    }
+</style>`}
+
 
 <main
   style="--primary-color: {colors.primary};
@@ -27,7 +38,7 @@
         {config.getHerName()} & {config.getHisName()} are getting married!
       </h1>
       <p>
-        Its happening at {config.getAddress().name} in {config.getAddress()
+        It's happening at {config.getAddress().name} in {config.getAddress()
           .town}
       </p>
       <p>{formatDate(date, "DD/MM/YYYY")}</p>
