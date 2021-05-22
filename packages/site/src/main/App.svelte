@@ -2,6 +2,13 @@
   import { config } from "../common/config"
   import { getTimeUntil, formatDate } from "../common/date"
   import { Images } from "../common/images"
+  import {
+    Button,
+    Heading,
+    SubHeading,
+    Text,
+    Layout,
+  } from "../components"
 
   const date = config.getDate()
   const ukDate = new Date(config.getDate()).toString()
@@ -33,19 +40,31 @@
     <div class="header">
       <img src={Images.LOGO} height="100%" alt="floral heart" />
     </div>
-    <div class="textWrapper">
-      <h1>
-        {config.getHerName()} & {config.getHisName()} are getting married!
-      </h1>
-      <p>
-        It's happening at {config.getAddress().name} in {config.getAddress()
-          .town}
-      </p>
-      <p>{formatDate(date, "DD/MM/YYYY")}</p>
+    <div class="heading">
+      <Heading>
+        {config.getHerName()} & {config.getHisName()}
+      </Heading>
+      <Text size="L">
+        We can't wait to share our big day with you.
+      </Text>
     </div>
-    <div class="venue">
-      <img src={Images.VENUE_LRG} width="100%" alt="venue" />
+    <div class="left">
+      <img src={Images.US} width="100%" alt="us" />
     </div>
+  </div>
+  <div class="right">
+    <Layout gap="M" justifyItems="center">
+      <SubHeading>
+        {config.getAddress().name}, {config.getAddress().town}
+      </SubHeading>
+      <Text size="L">
+        {formatDate(date, "dddd, MMMM D, YYYY")}
+      </Text>
+      <Button width="60%">Respond Here</Button>
+    </Layout>
+  </div>
+  <div class="corner">
+    <img src={Images.CORNER} height="300px" alt="corner" />
   </div>
 </main>
 
@@ -54,20 +73,13 @@
     width: 100%;
     height: 100%;
     background-color: var(--primary-color);
-    color: var(--text-color);
     overflow: hidden;
   }
 
   .body {
-    text-align: center;
     padding: 1em;
     margin: 0 auto;
     overflow: hidden;
-  }
-
-  h1 {
-    font-size: 4em;
-    font-weight: 100;
   }
 
   .header {
@@ -75,51 +87,55 @@
     height: 10%;
   }
 
-  .header img {
-    left: 0;
-    width: 128px;
-    margin-left: 30px;
-    margin-top: 10px;
-    float: left;
+  .left {
+    position: absolute;
+    filter: grayscale(70%);
+    height: 100%;
+    left: -20%;
+    bottom: 0;
+    width: 80%;
   }
 
-  .textWrapper {
-    font-family: var(--primary-font);
-    top: 15%;
-    width: 40%;
-    left: 50%;
-    transform: translate(-50%, 0);
+  .right {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30%;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .header img {
+    width: 128px;
+    margin-right: 30px;
+    margin-top: 10px;
+    float: right;
+  }
+
+  .heading {
+    left: 4em;
     position: absolute;
     z-index: 1;
+    top: 3em;
+    color: white;
+    text-align: left;
   }
 
-  .textWrapper p {
-    font-size: 1.6em;
+  .corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    filter: grayscale(10%);
   }
 
-  .venue {
-    opacity: 0.7;
-    position: fixed;
-    bottom: -20vw;
-    width: 104%;
-    left: -2%;
+  .corner img {
+    transform-origin: bottom right;
   }
 
   @media only screen and (max-width: 640px) {
     main {
       max-width: none;
-    }
-
-    .venue {
-      top: auto;
-      bottom: -60px;
-      width: 120%;
-      left: -10%;
-    }
-
-    .textWrapper {
-      width: 100%;
-      top: 15%;
     }
 
     .header img {
