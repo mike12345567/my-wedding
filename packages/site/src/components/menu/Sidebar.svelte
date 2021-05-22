@@ -1,12 +1,20 @@
 <script>
+  import {
+    Layout,
+  } from "../"
+
   export let open = false
 </script>
 
 <aside class="absolute w-full h-full border-r-2 shadow-lg" class:open>
-  <nav class="p-12 text-xl">
-    <br />
-    <a class="block" href="#about">About</a>
-    <a class="block" href="#contact">Contact</a>
+  <nav class="p-16 text-xl">
+    <div>
+    <Layout gap="XS" topPadding="10px">
+      <a class="block" href="#About">About</a>
+      <a class="block" href="#venue">Venue</a>
+      <a class="block" href="#schedule">Schedule</a>
+      <a class="block" href="#gifts">Gifts</a>
+    </Layout>
   </nav>
 </aside>
 

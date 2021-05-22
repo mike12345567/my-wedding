@@ -21,8 +21,8 @@
   .hamburger {
     position: relative;
     z-index: 1000;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 35px;
+    margin-left: 35px;
   }
 
   .header {

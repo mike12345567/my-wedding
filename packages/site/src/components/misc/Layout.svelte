@@ -3,10 +3,11 @@
   export let noGap = false
   export let alignContent = "normal"
   export let justifyItems = "stretch"
+  export let topPadding
 </script>
 
 <div
-  style="align-content:{alignContent};justify-items:{justifyItems};"
+  style="align-content:{alignContent};justify-items:{justifyItems}; padding-top:{topPadding}"
   class="container gap-{!noGap && gap}"
 >
   <slot />

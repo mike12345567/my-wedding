@@ -57,7 +57,7 @@
         {config.getAddress().name}, {config.getAddress().town}
       </SubHeading>
       <Text size="L">
-        {formatDate(date, "dddd, MMMM D, YYYY")}
+        {formatDate(date, "dddd, Do MMMM, YYYY")}
       </Text>
       <Button width="40%">Respond Here</Button>
     </Layout>

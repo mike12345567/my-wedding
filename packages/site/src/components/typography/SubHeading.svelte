@@ -11,7 +11,7 @@
 
 <style>
   span {
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: 100;
   }
 
