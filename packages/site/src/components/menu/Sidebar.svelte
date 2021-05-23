@@ -6,8 +6,8 @@
 </script>
 
 <aside class="absolute w-full h-full border-r-2 shadow-lg" class:open>
-  <nav class="p-16 text-xl">
-    <Layout gap="XS" topPadding="10px">
+  <nav class="p-20 text-xl">
+    <Layout gap="XS" topPadding="20px">
       <Link to=""><p>Home</p></Link>
       <Link to="site/venue"><p>Venue</p></Link>
       <Link to="site/schedule"><p>Schedule</p></Link>

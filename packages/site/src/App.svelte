@@ -49,6 +49,11 @@
     overflow: hidden;
   }
 
+  div {
+    width: 100%;
+    height: 100%;
+  }
+
   @media only screen and (max-width: 640px) {
     main {
       max-width: none;

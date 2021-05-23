@@ -37,11 +37,8 @@
 
   button {
     z-index: 20;
-  }
-
-  .open svg {
-    transform: scale(0.7);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    padding: 8px;
   }
 
   .open #top {

@@ -4,20 +4,25 @@
   export let alignContent = "normal"
   export let justifyItems = "stretch"
   export let topPadding
+
+  const center = justifyItems === "center"
 </script>
 
 <div
   style="align-content:{alignContent};justify-items:{justifyItems}; padding-top:{topPadding}"
-  class="container gap-{!noGap && gap}"
+  class="layout-container gap-{!noGap && gap} {center ? 'center' : ''}"
 >
   <slot />
 </div>
 
 <style>
-  .container {
+  .layout-container {
     display: grid;
     grid-template-columns: 1fr;
     position: relative;
+  }
+  .center {
+    width: 100%;
   }
   .gap-XS {
     grid-gap: 0.5em;
