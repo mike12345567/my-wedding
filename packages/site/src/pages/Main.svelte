@@ -8,7 +8,7 @@
     SubHeading,
     Text,
     Layout,
-    Header,
+    Transition,
   } from "../components"
 
   const date = config.getDate()
@@ -18,26 +18,7 @@
   $: daysUntil = date ? getTimeUntil(date) : "No date provided"
 </script>
 
-{@html
-  `<style>
-    @font-face {
-      font-family: ${config.getPrimaryFont().name};
-      src: url(${config.getPrimaryFont().url});
-    }
-    @font-face {
-      font-family: ${config.getSecondaryFont().name};
-      src: url(${config.getSecondaryFont().url});
-    }
-  </style>`
-}
-
-<main
-  style="--primary-color: {colors.primary};
- --text-color: {colors.text};
- --primary-font: {config.getPrimaryFont().name};
- --secondary-font: {config.getSecondaryFont().name}"
->
-  <Header />
+<Transition>
   <div class="body">
     <div class="heading">
       <Heading shadow>
@@ -65,16 +46,9 @@
   <div class="corner">
     <img src={Images.CORNER} alt="corner" />
   </div>
-</main>
+</Transition>
 
 <style>
-  main {
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-color);
-    overflow: hidden;
-  }
-
   .body {
     padding: 1em;
     margin: 0 auto;
@@ -119,11 +93,5 @@
   .corner img {
     transform-origin: bottom right;
     height: 300px;
-  }
-
-  @media only screen and (max-width: 640px) {
-    main {
-      max-width: none;
-    }
   }
 </style>

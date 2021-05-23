@@ -1,20 +1,20 @@
 <script>
   import { Layout } from "../"
+  import { Link } from "svelte-routing"
 
+  export let url = ""
   export let open = false
 </script>
 
 <aside class="absolute w-full h-full border-r-2 shadow-lg" class:open>
   <nav class="p-16 text-xl">
-    <div>
-      <Layout gap="XS" topPadding="10px">
-        <a class="block" href="#About">About</a>
-        <a class="block" href="#venue">Venue</a>
-        <a class="block" href="#schedule">Schedule</a>
-        <a class="block" href="#gifts">Gifts</a>
-        <a class="block" href="#rsvp">RSVP</a>
-      </Layout>
-    </div>
+    <Layout gap="XS" topPadding="10px">
+      <Link to=""><p>Home</p></Link>
+      <Link to="site/venue"><p>Venue</p></Link>
+      <Link to="site/schedule"><p>Schedule</p></Link>
+      <Link to="site/gifts"><p>Gifts</p></Link>
+      <Link to="site/rsvp"><p>RSVP</p></Link>
+    </Layout>
   </nav>
 </aside>
 
@@ -22,12 +22,12 @@
   aside {
     left: -100%;
     transition: left 0.3s ease-in-out;
-    width: 30%;
+    width: 400px;
     background-color: var(--primary-color);
     color: var(--text-color);
   }
 
-  a {
+  p {
     color: var(--text-color);
   }
 

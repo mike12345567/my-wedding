@@ -4,6 +4,7 @@ const router = Router()
 
 router
   .get("/", controller.serveApp)
+  .get("/site/:path(.*)", controller.serveApp)
   .get("/assets/:path(.*)", controller.serveAssets)
   .get("/build/:path(.*)", controller.serveBuild)
 
