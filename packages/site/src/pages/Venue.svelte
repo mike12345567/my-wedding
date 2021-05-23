@@ -3,7 +3,5 @@
 </script>
 
 <Transition>
-  <Heading>
-    Venue
-  </Heading>
+  <Heading>Venue</Heading>
 </Transition>

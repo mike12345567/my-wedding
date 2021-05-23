@@ -3,7 +3,5 @@
 </script>
 
 <Transition>
-  <Heading>
-    Gifts
-  </Heading>
+  <Heading>Gifts</Heading>
 </Transition>

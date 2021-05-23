@@ -3,7 +3,5 @@
 </script>
 
 <Transition>
-  <Heading>
-    Schedule
-  </Heading>
+  <Heading>Schedule</Heading>
 </Transition>

@@ -3,7 +3,5 @@
 </script>
 
 <Transition>
-  <Heading>
-    Rsvp
-  </Heading>
+  <Heading>Rsvp</Heading>
 </Transition>
