@@ -2,7 +2,6 @@
   import { Layout } from "../"
   import { Link } from "svelte-routing"
 
-  export let url = ""
   export let open = false
 </script>
 

@@ -2,6 +2,7 @@
   import { config } from "../common/config"
   import { getTimeUntil, formatDate } from "../common/date"
   import { Images } from "../common/images"
+  import { Link } from "svelte-routing"
   import {
     Button,
     Heading,
@@ -40,7 +41,9 @@
       <Text size="L">
         {formatDate(date, "dddd, Do MMMM, YYYY")}
       </Text>
-      <Button width="40%">Respond Here</Button>
+      <Link to="site/rsvp">
+        <Button width="220px">Respond Here</Button>
+      </Link>
     </Layout>
   </div>
   <div class="corner">
