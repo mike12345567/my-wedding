@@ -1,5 +1,13 @@
 <script>
-  import { Transition, Layout, SubHeading, Input, Select, Button, Text } from "../components"
+  import {
+    Transition,
+    Layout,
+    SubHeading,
+    Input,
+    Select,
+    Button,
+    Text,
+  } from "../components"
 
   let guestNumber = 1
   let email
@@ -11,37 +19,44 @@
   <div class="center">
     <div class="border">
       <Layout justifyItems="center" topPadding="20px" bottomPadding="30px">
-        <SubHeading primary>
-          RSVP
-        </SubHeading>
+        <SubHeading primary>RSVP</SubHeading>
         <div class="mainText">
           <Text>
             We can't wait to share our big day with you! If you could please let
-            us know the names, meal choices and dietary needs of those invited (including plus ones if mentioned).
-            If have a specific need/request or want to change a response that you've
-            already sent please reach out to us 😊
+            us know the names, meal choices and dietary needs of those invited
+            (including plus ones if mentioned). If have a specific need/request
+            or want to change a response that you've already sent please reach
+            out to us 😊
           </Text>
         </div>
         <Input label="email" bind:value={email} />
-        <Select label="Number of guests" bind:value={guestNumber} options={[1, 2, 3, 4, 5, 6]} />
-          {#if guestNumber}
-            <div class="guestSection">
-              <Layout gap="S" justifyItems="center">
-                {#each [...Array(guestNumber).keys()] as number}
-                  <div class="guest">
-                    <Text weight="600">Guest {number + 1}</Text>
-                    <div class="topLine">
-                      <div class="name">
-                        <Input width="100%" label="Name" />
-                      </div>
-                      <Select width="100px" label="Meal" options={["Meat", "Veg"]} />
+        <Select
+          label="Number of guests"
+          bind:value={guestNumber}
+          options={[1, 2, 3, 4, 5, 6]}
+        />
+        {#if guestNumber}
+          <div class="guestSection">
+            <Layout gap="S" justifyItems="center">
+              {#each [...Array(guestNumber).keys()] as number}
+                <div class="guest">
+                  <Text weight="600">Guest {number + 1}</Text>
+                  <div class="topLine">
+                    <div class="name">
+                      <Input width="100%" label="Name" />
                     </div>
-                    <Input label="Dietary requirements" />
+                    <Select
+                      width="100px"
+                      label="Meal"
+                      options={["Meat", "Veg"]}
+                    />
                   </div>
-                {/each}
-              </Layout>
-            </div>
-          {/if}
+                  <Input label="Dietary requirements" />
+                </div>
+              {/each}
+            </Layout>
+          </div>
+        {/if}
         <div class="buttons">
           <div class="right">
             <Button width="200px">Send RSVP</Button>
@@ -107,6 +122,6 @@
     padding-bottom: 100px;
     color: var(--text-color);
     display: grid;
-    justify-items:center;
+    justify-items: center;
   }
 </style>
