@@ -3,13 +3,13 @@
   export let noGap = false
   export let alignContent = "normal"
   export let justifyItems = "stretch"
-  export let topPadding
+  export let topPadding, bottomPadding
 
   const center = justifyItems === "center"
 </script>
 
 <div
-  style="align-content:{alignContent};justify-items:{justifyItems}; padding-top:{topPadding}"
+  style="align-content:{alignContent};justify-items:{justifyItems};padding-top:{topPadding};padding-bottom:{bottomPadding}"
   class="layout-container gap-{!noGap && gap} {center ? 'center' : ''}"
 >
   <slot />

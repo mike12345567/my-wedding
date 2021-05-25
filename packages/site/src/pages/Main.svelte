@@ -32,22 +32,22 @@
     <div class="left">
       <img src={Images.US} width="100%" alt="us" />
     </div>
-  </div>
-  <div class="right">
-    <Layout gap="M" justifyItems="center">
-      <SubHeading>
-        {config.getAddress().name}, {config.getAddress().town}
-      </SubHeading>
-      <Text size="L">
-        {formatDate(date, "dddd, Do MMMM, YYYY")}
-      </Text>
-      <Link to="site/rsvp">
-        <Button width="220px">Respond Here</Button>
-      </Link>
-    </Layout>
-  </div>
-  <div class="corner">
-    <img src={Images.CORNER} alt="corner" />
+    <div class="right">
+      <Layout gap="M" justifyItems="center">
+        <SubHeading>
+          {config.getAddress().name}, {config.getAddress().town}
+        </SubHeading>
+        <Text size="L">
+          {formatDate(date, "dddd, Do MMMM, YYYY")}
+        </Text>
+        <Link to="site/rsvp">
+          <Button width="220px">Respond Here</Button>
+        </Link>
+      </Layout>
+    </div>
+    <div class="corner">
+      <img src={Images.CORNER} alt="corner" />
+    </div>
   </div>
 </Transition>
 
@@ -65,6 +65,7 @@
     left: -20%;
     bottom: 0;
     width: 80%;
+    overflow: hidden;
   }
 
   .right {

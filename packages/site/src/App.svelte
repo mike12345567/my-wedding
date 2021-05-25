@@ -44,9 +44,8 @@
 <style>
   main {
     width: 100%;
-    height: 100%;
     background-color: var(--primary-color);
-    overflow: hidden;
+    min-height: 100%;
   }
 
   div {
