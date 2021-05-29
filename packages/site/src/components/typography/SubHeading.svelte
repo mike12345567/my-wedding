@@ -1,9 +1,10 @@
 <script>
   import Text from "./Text.svelte"
   export let primary = false
+  export let size = "M"
 </script>
 
-<span>
+<span class="{size}">
   <Text {primary}>
     <slot />
   </Text>
@@ -11,8 +12,22 @@
 
 <style>
   span {
-    font-size: 3em;
     font-weight: 100;
+  }
+
+  .S {
+    font-size: 2em;
+  }
+  .M {
+    font-size: 3em;
+  }
+  .L {
+    font-size: 4em;
+    line-height: 1.2;
+  }
+
+  span {
+
   }
 
   @media only screen and (max-width: 640px) {

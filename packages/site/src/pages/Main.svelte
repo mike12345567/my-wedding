@@ -34,7 +34,7 @@
     </div>
     <div class="right">
       <Layout gap="M" justifyItems="center">
-        <SubHeading>
+        <SubHeading primary size="L">
           {config.getAddress().name}, {config.getAddress().town}
         </SubHeading>
         <Text size="L">

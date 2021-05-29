@@ -48,6 +48,14 @@
     min-height: 100%;
   }
 
+  main :global(a) {
+    text-decoration: none;
+  }
+
+  main :global(a:hover) {
+    font-weight: bold;
+  }
+
   div {
     width: 100%;
     height: 100%;
