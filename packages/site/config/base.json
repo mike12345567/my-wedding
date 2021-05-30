@@ -9,7 +9,8 @@
     "postcode": ""
   },
   "info": {
-    "rsvp": "Please RSVP below."
+    "rsvp1": "Please RSVP below.",
+    "gift": []
   },
   "meals": [
     {

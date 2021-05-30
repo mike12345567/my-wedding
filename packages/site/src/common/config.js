@@ -39,7 +39,13 @@ export default {
   getMeals: () => {
     return CONFIG.meals
   },
-  getRSVP: () => {
-    return CONFIG.info.rsvp
+  getRSVP1: () => {
+    return CONFIG.info.rsvp1
+  },
+  getRSVP2: () => {
+    return CONFIG.info.rsvp2
+  },
+  getGiftInfo: () => {
+    return CONFIG.info.gift.join("")
   },
 }

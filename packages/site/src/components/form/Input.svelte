@@ -13,7 +13,6 @@
   const dispatch = createEventDispatcher()
   const onChange = e => {
     value = e.target.value
-    dispatch("change", e.target.value)
   }
 </script>
 
@@ -31,6 +30,7 @@
         {disabled}
         {readonly}
         on:input={onChange}
+        on:change
         on:click
         on:focus
         on:input

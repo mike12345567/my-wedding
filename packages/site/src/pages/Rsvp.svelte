@@ -10,9 +10,31 @@
     Form,
   } from "../components"
   import config from "../common/config"
+  import { onMount } from "svelte"
 
   let guestNumber = 1
   let email
+  let guests
+  $: updateGuests(guestNumber)
+
+  function updateGuests(count) {
+    let base = guests
+    if (!base) {
+      base = [{}]
+    }
+    while (count !== base.length) {
+      if (base.length > count) {
+        base.pop()
+      } else {
+        base.push({})
+      }
+    }
+    guests = [ ...base ]
+  }
+
+  function emailChanged() {
+    // TODO: check if they've already responded
+  }
 </script>
 
 <Transition>
@@ -20,7 +42,9 @@
     <SubHeading primary>RSVP</SubHeading>
     <div class="mainText">
       <Text>
-        {config.getRSVP()}
+        {config.getRSVP1()}
+        <br>
+        {config.getRSVP2()}
       </Text>
       <br>
       <Text bold>
@@ -32,7 +56,7 @@
         {/each}
       </Text>
     </div>
-    <Input width="70%" label="Email" bind:value={email} />
+    <Input width="70%" label="Email" bind:value={email} on:change={emailChanged} />
     <Select
       width="70%"
       label="Number of guests"
@@ -42,9 +66,9 @@
     {#if guestNumber}
       <div class="guestSection">
         <Layout gap="S" justifyItems="center">
-          {#each [...Array(guestNumber).keys()] as number}
+          {#each guests as guest}
             <div class="guest">
-              <Text weight="600">Guest {number + 1}</Text>
+              <Text weight="600">Guest {guests.indexOf(guest) + 1}</Text>
               <div class="name">
                 <Input width="100%" label="Name" />
               </div>
