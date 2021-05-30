@@ -1,5 +1,5 @@
 <script>
-  import { config } from "../common/config"
+  import config from "../common/config"
   import { getTimeUntil, formatDate } from "../common/date"
   import { Images } from "../common/images"
   import { Link } from "svelte-routing"

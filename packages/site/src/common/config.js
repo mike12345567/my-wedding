@@ -4,7 +4,7 @@ export function getFullConfig() {
   return CONFIG
 }
 
-export const config = {
+export default {
   getHisName: () => {
     return CONFIG.hisName
   },

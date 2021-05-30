@@ -7,6 +7,7 @@ const app = new Koa()
 const Router = require("@koa/router")
 const serve = require("koa-static")
 const compress = require("koa-compress")
+const body = require("koa-body")
 const authMiddleware = require("./middleware/cookie")
 const zlib = require("zlib")
 const api = require("./api")
@@ -15,6 +16,12 @@ const { join } = require("path")
 const mainRouter = new Router()
 
 mainRouter
+  .use(
+    body({
+      jsonLimit: "1mb",
+      enableTypes: ["json"],
+    })
+  )
   .use(
     compress({
       threshold: 2048,
@@ -31,7 +38,7 @@ mainRouter
     authMiddleware([
       {
         method: "POST",
-        route: "/api/password/check",
+        route: "/api/login",
       },
       {
         method: "GET",

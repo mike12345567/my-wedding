@@ -1,18 +1,19 @@
 <script>
   import { createEventDispatcher } from "svelte"
 
-  export let value = null
+  export let value = ""
   export let label = null
   export let disabled = false
   export let readonly = false
   export let error = null
-  export let type = "text"
+  export let password = "text"
   export let width
+  export let type
 
   const dispatch = createEventDispatcher()
   const onChange = e => {
-    value = e.detail
-    dispatch("change", e.detail)
+    value = e.target.value
+    dispatch("change", e.target.value)
   }
 </script>
 
@@ -29,12 +30,12 @@
         class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
         {disabled}
         {readonly}
-        value={value || ""}
+        on:input={onChange}
         on:click
         on:focus
         on:input
         on:keyup
-        type
+        {type}
       />
     </div>
     {#if error}

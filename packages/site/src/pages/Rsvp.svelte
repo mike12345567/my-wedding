@@ -9,7 +9,7 @@
     Text,
     Form,
   } from "../components"
-  import { config } from "../common/config"
+  import config from "../common/config"
 
   let guestNumber = 1
   let email

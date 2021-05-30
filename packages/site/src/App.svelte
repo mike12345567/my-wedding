@@ -1,15 +1,15 @@
 <script>
-  import { config } from "./common/config"
+  import config from "./common/config"
   import { Router, Route } from "svelte-routing"
   import { Main, Gifts, Rsvp, Schedule, Venue, Login } from "./pages"
   import { Header } from "./components"
+  import { auth } from "./stores"
 
   const date = config.getDate()
   const ukDate = new Date(config.getDate()).toString()
   const colors = config.getColors()
 
   export let url = window.location.pathname
-  export let loggedIn = true
 </script>
 
 {@html
@@ -31,9 +31,9 @@
  --primary-font: {config.getPrimaryFont().name};
  --secondary-font: {config.getSecondaryFont().name}">
   <Router url="{url}">
-    <Header loggedIn={loggedIn} />
+    <Header loggedIn={$auth.loggedIn} />
     <div>
-      {#if loggedIn}
+      {#if $auth.loggedIn}
         <Route path="" component="{Main}" />
         <Route path="site/venue" component="{Venue}" />
         <Route path="site/schedule" component="{Schedule}" />

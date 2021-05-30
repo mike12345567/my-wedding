@@ -18,6 +18,7 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.5",
     "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
     "koa-compress": "^5.0.1",
     "koa-joi-validate-middleware": "^1.1.7",
     "koa-send": "^5.0.1",

@@ -7,9 +7,16 @@
     Text,
     Form,
   } from "../components"
-  import { config } from "../common/config"
+  import { auth } from "../stores"
 
   let password
+  let error
+  $: disabled = !password
+
+  async function login() {
+    console.log("TRY LOGIN")
+    await auth.login(password)
+  }
 </script>
 
 <Transition>
@@ -23,7 +30,7 @@
     <Input type="password" label="Password" width="60%" bind:value={password} />
     <div class="buttons">
       <div class="right">
-        <Button width="200px">Login</Button>
+        <Button width="200px" bind:disabled={disabled} on:click={login}>Login</Button>
       </div>
     </div>
   </Form>
