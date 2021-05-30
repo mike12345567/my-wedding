@@ -59,10 +59,6 @@
 </Transition>
 
 <style>
-  :global(.header img) {
-    display: none;
-  }
-
   .body {
     position: absolute;
     top: 0;

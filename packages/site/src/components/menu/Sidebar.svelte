@@ -53,6 +53,8 @@
   @media only screen and (max-width: 640px) {
     aside {
       width: 100%;
+      border-radius: 0;
+      border: none;
     }
   }
 </style>

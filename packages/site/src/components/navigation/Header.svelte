@@ -45,6 +45,8 @@
     .header img {
       margin-left: 0;
       float: none;
+      margin-right: 20px;
+      margin-top: 15px;
     }
   }
 </style>
