@@ -2,13 +2,17 @@
   import { Sidebar, Hamburger } from "../"
   import { Images } from "../../common/images"
 
+  export let loggedIn
+
   let open = false
 </script>
 
-<Sidebar bind:open />
-<div class="hamburger">
-  <Hamburger bind:open />
-</div>
+{#if loggedIn}
+  <Sidebar bind:open />
+  <div class="hamburger">
+    <Hamburger bind:open />
+  </div>
+{/if}
 <div class="header">
   <img src={Images.LOGO} height="100%" alt="floral heart" />
 </div>

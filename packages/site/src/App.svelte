@@ -1,7 +1,7 @@
 <script>
   import { config } from "./common/config"
   import { Router, Route } from "svelte-routing"
-  import { Main, Gifts, Rsvp, Schedule, Venue } from "./pages"
+  import { Main, Gifts, Rsvp, Schedule, Venue, Login } from "./pages"
   import { Header } from "./components"
 
   const date = config.getDate()
@@ -9,6 +9,7 @@
   const colors = config.getColors()
 
   export let url = window.location.pathname
+  export let loggedIn = true
 </script>
 
 {@html
@@ -30,18 +31,27 @@
  --primary-font: {config.getPrimaryFont().name};
  --secondary-font: {config.getSecondaryFont().name}">
   <Router url="{url}">
-    <Header />
+    <Header loggedIn={loggedIn} />
     <div>
-      <Route path="" component="{Main}" />
-      <Route path="site/venue" component="{Venue}" />
-      <Route path="site/schedule" component="{Schedule}" />
-      <Route path="site/gifts" component="{Gifts}" />
-      <Route path="site/rsvp" component="{Rsvp}" />
+      {#if loggedIn}
+        <Route path="" component="{Main}" />
+        <Route path="site/venue" component="{Venue}" />
+        <Route path="site/schedule" component="{Schedule}" />
+        <Route path="site/gifts" component="{Gifts}" />
+        <Route path="site/rsvp" component="{Rsvp}" />
+      {:else}
+        <Route path="" component="{Login}" />
+      {/if}
     </div>
   </Router>
 </main>
 
 <style>
+  :global(body) {
+    background-color: var(--primary-color);
+    margin-top: 0;
+  }
+
   main {
     width: 100%;
     background-color: var(--primary-color);

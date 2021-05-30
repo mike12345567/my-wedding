@@ -6,6 +6,7 @@
   export let disabled = false
   export let readonly = false
   export let error = null
+  export let type = "text"
   export let width
 
   const dispatch = createEventDispatcher()
@@ -33,7 +34,7 @@
         on:focus
         on:input
         on:keyup
-        type="text"
+        type
       />
     </div>
     {#if error}

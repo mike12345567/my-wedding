@@ -36,4 +36,10 @@ export const config = {
   getColors: () => {
     return CONFIG.colors
   },
+  getMeals: () => {
+    return CONFIG.meals
+  },
+  getRSVP: () => {
+    return CONFIG.info.rsvp
+  },
 }

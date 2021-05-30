@@ -9,26 +9,30 @@
     Text,
     Form,
   } from "../components"
+  import { config } from "../common/config"
 
   let guestNumber = 1
   let email
-
-  $: console.log(guestNumber)
 </script>
 
 <Transition>
-  <Form center>
+  <Form center topPadding="80px">
     <SubHeading primary>RSVP</SubHeading>
     <div class="mainText">
       <Text>
-        We can't wait to share our big day with you! If you could please let
-        us know the names, meal choices and dietary needs of those invited
-        (including plus ones if mentioned). If have a specific need/request
-        or want to change a response that you've already sent please reach
-        out to us 😊
+        {config.getRSVP()}
+      </Text>
+      <br>
+      <Text bold>
+        Meal Choices
+      </Text>
+      <Text>
+        {#each config.getMeals() as meal}
+          <b>{meal.type}</b> - {meal.details}<br>
+        {/each}
       </Text>
     </div>
-    <Input label="email" bind:value={email} />
+    <Input label="Email" bind:value={email} />
     <Select
       label="Number of guests"
       bind:value={guestNumber}

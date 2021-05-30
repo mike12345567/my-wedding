@@ -8,6 +8,9 @@
     "town": "",
     "postcode": ""
   },
+  "info": {
+    "rsvp": "Please RSVP below."
+  },
   "meals": [
     {
       "type": "",
