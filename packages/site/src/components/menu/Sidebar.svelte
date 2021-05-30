@@ -3,16 +3,26 @@
   import { Link } from "svelte-routing"
 
   export let open = false
+
+  let links = [
+    {to: "", text: "Home"},
+    {to: "site/venue", text: "Venue"},
+    {to: "site/schedule", text: "Schedule"},
+    {to: "site/gifts", text: "Gifts"},
+    {to: "site/rsvp", text: "RSVP"},
+  ]
+
+  function linkClick() {
+    open = false
+  }
 </script>
 
 <aside class="absolute w-full h-full border-r-2 shadow-lg" class:open>
   <nav class="p-20 text-xl">
     <Layout gap="XS" topPadding="20px">
-      <Link to=""><p>Home</p></Link>
-      <Link to="site/venue"><p>Venue</p></Link>
-      <Link to="site/schedule"><p>Schedule</p></Link>
-      <Link to="site/gifts"><p>Gifts</p></Link>
-      <Link to="site/rsvp"><p>RSVP</p></Link>
+      {#each links as link}
+        <Link to={link.to} on:click={linkClick}><p>{link.text}</p></Link>
+      {/each}
     </Layout>
   </nav>
 </aside>

@@ -4,12 +4,17 @@
   import { Main, Gifts, Rsvp, Schedule, Venue, Login } from "./pages"
   import { Header } from "./components"
   import { auth } from "./stores"
+  import { onMount } from "svelte"
 
   const date = config.getDate()
   const ukDate = new Date(config.getDate()).toString()
   const colors = config.getColors()
 
   export let url = window.location.pathname
+
+  onMount(async () => {
+    await auth.self()
+  })
 </script>
 
 {@html
