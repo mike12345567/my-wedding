@@ -11,11 +11,13 @@ function getRsvpSaveValidation() {
   // prettier-ignore
   return validateMiddleware.create({
     body: Joi.object({
+      id: Joi.number().optional(),
       email: Joi.string().required(),
       guests: Joi.array().items(
         Joi.object({
           name: Joi.string().required(),
-          mealChoice: Joi.string().valid(...getMealTypes())
+          choice: Joi.string().valid(...getMealTypes()),
+          dietary: Joi.string().optional(),
         }).unknown(false)
       ).required()
     }).unknown(false).required(),

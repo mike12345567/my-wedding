@@ -1,6 +1,4 @@
 <script>
-  import { createEventDispatcher } from "svelte"
-
   export let value = ""
   export let label = null
   export let disabled = false
@@ -10,9 +8,8 @@
   export let width
   export let type
 
-  const dispatch = createEventDispatcher()
-  const onChange = e => {
-    value = e.target.value
+  function typeAction(node) {
+    node.type = type;
   }
 </script>
 
@@ -29,13 +26,13 @@
         class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
         {disabled}
         {readonly}
-        on:input={onChange}
+        bind:value
         on:change
         on:click
         on:focus
         on:input
         on:keyup
-        {type}
+        use:typeAction
       />
     </div>
     {#if error}

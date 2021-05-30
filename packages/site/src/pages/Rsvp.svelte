@@ -11,17 +11,26 @@
   } from "../components"
   import config from "../common/config"
   import { validateEmail } from "../common/utils"
+  import data from "../stores/data"
+  import { success, failure } from "../common/toast"
 
   let guestNumber = 1
   let email = ""
-  let guests
-  let error = null
   let lastEmail = ""
-  $: updateGuests(guestNumber)
+  let error = null
+  let tempGuests
+  let id = null
+
+  $: guests = updateGuests(guestNumber, tempGuests)
   $: error = lastEmail !== email ? null : error
   $: disabled = !!error
 
-  function updateGuests(count) {
+  function updateGuests(count, foundGuests) {
+    if (foundGuests) {
+      tempGuests = null
+      console.log(foundGuests)
+      return foundGuests
+    }
     let base = guests
     if (!base) {
       base = [{}]
@@ -33,20 +42,30 @@
         base.push({})
       }
     }
-    guests = [...base]
+    return base
   }
 
-  function emailChanged() {
+  async function emailChanged() {
     lastEmail = email
     if (email && !validateEmail(email)) {
       error = "Invalid email address"
       return
     }
-    // TODO: check if they've already responded
+    const rsvp = await data.getRsvp(email)
+    if (rsvp && rsvp.guests && rsvp.guests.length >= 1) {
+      id = rsvp.id
+      tempGuests = rsvp.guests
+      guestNumber = tempGuests.length
+    }
   }
 
-  async function saveRSVP() {
-    console.log(guests)
+  async function save() {
+    try {
+      await data.saveRsvp(email, guests, id)
+      success("RSVP has been sent!")
+    } catch (err) {
+      failure(err)
+    }
   }
 </script>
 
@@ -105,9 +124,9 @@
     {/if}
     <div class="buttons">
       <div class="right">
-        <Button width="200px" bind:disabled on:click={saveRSVP}
-          >Send RSVP</Button
-        >
+        <Button width="200px" bind:disabled on:click={save}>
+          Send RSVP
+        </Button>
       </div>
     </div>
   </Form>

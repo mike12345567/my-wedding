@@ -5,6 +5,7 @@
   import { Header } from "./components"
   import { auth } from "./stores"
   import { onMount } from "svelte"
+  import { SvelteToast } from "@zerodevx/svelte-toast"
 
   const date = config.getDate()
   const ukDate = new Date(config.getDate()).toString()
@@ -35,6 +36,7 @@
  --text-color: {colors.text};
  --primary-font: {config.getPrimaryFont().name};
  --secondary-font: {config.getSecondaryFont().name}">
+  <SvelteToast />
   <Router url="{url}">
     <Header loggedIn={$auth.loggedIn} />
     <div>

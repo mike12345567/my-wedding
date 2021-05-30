@@ -1,10 +1,10 @@
 const env = require("../environment")
 const { TableNames, rsvp } = require("./tables")
 
-let client
+let CLIENT
 
 async function init() {
-  const client = require("knex")({
+  CLIENT = require("knex")({
     client: "pg",
     connection: {
       host: env.POSTGRES_HOST,
@@ -14,7 +14,7 @@ async function init() {
       database: env.POSTGRES_DB,
     },
   })
-  await rsvp(client)
+  await rsvp(CLIENT)
 }
 // always init immediately
 init().catch(err => {
@@ -22,18 +22,25 @@ init().catch(err => {
   process.exit(-1)
 })
 
-exports.saveRsvp = async (email, guests) => {
+exports.saveRsvp = async (email, guests, id = undefined) => {
   if (typeof guests !== "object") {
     throw "Guests must be of type Object"
   }
-  await client(TableNames.RSVP).insert({
-    email,
-    guests,
-  })
+  if (!id) {
+    await CLIENT(TableNames.RSVP).insert({
+      email,
+      guests: JSON.stringify(guests),
+    })
+  } else {
+    await CLIENT(TableNames.RSVP).where({ id }).update({
+      email,
+      guests: JSON.stringify(guests),
+    })
+  }
 }
 
 exports.findRsvp = async email => {
-  const rows = await client(TableNames.RSVP).where({
+  const rows = await CLIENT(TableNames.RSVP).where({
     email,
   })
   if (rows && rows.length === 1) {
@@ -43,5 +50,5 @@ exports.findRsvp = async email => {
 }
 
 exports.allRsvp = async () => {
-  return client(TableNames.RSVP).select("*")
+  return CLIENT(TableNames.RSVP).select("*")
 }

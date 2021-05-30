@@ -21,6 +21,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "@zerodevx/svelte-toast": "^0.3.0",
     "dayjs": "^1.10.4",
     "sirv-cli": "^1.0.0",
     "svelte-routing": "^1.6.0"
