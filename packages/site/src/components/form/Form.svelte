@@ -4,7 +4,7 @@
   export let topPadding
 </script>
 
-<div class:center style="{topPadding ? `padding-top: ${topPadding}` : ''}">
+<div class:center style={topPadding ? `padding-top: ${topPadding}` : ""}>
   <div class="border">
     <Layout justifyItems="center" topPadding="20px" bottomPadding="30px">
       <slot />

@@ -5,11 +5,11 @@
   export let open = false
 
   let links = [
-    {to: "", text: "Home"},
-    {to: "site/venue", text: "Venue"},
-    {to: "site/schedule", text: "Schedule"},
-    {to: "site/gifts", text: "Gifts"},
-    {to: "site/rsvp", text: "RSVP"},
+    { to: "", text: "Home" },
+    { to: "site/venue", text: "Venue" },
+    { to: "site/schedule", text: "Schedule" },
+    { to: "site/gifts", text: "Gifts" },
+    { to: "site/rsvp", text: "RSVP" },
   ]
 
   function linkClick() {
@@ -28,7 +28,7 @@
   <div class="createdBy">
     <Text size="XXS">
       <i>Created By</i>
-      <br>
+      <br />
       Michael Drury and Andrew Kingston
     </Text>
   </div>

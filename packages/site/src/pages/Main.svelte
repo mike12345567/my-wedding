@@ -71,14 +71,16 @@
     height: 100%;
     width: 100%;
     overflow-y: auto;
-    display: flex; flex-direction: row;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
     flex-wrap: nowrap;
     overflow-x: hidden;
   }
 
-  .left, .right {
+  .left,
+  .right {
     position: relative;
     height: 100%;
   }
@@ -107,7 +109,7 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
-      z-index: 1;
+    z-index: 1;
   }
 
   .logo {
@@ -130,7 +132,7 @@
   }
 
   .content {
-      z-index: 1;
+    z-index: 1;
   }
   .corner {
     position: absolute;

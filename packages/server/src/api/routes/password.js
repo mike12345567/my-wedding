@@ -14,10 +14,8 @@ function getCheckPasswordValidation() {
   })
 }
 
-router.post(
-  "/api/login",
-  getCheckPasswordValidation(),
-  controller.checkPassword,
-).get("/api/self", controller.getSelf)
+router
+  .post("/api/login", getCheckPasswordValidation(), controller.checkPassword)
+  .get("/api/self", controller.getSelf)
 
 module.exports = router

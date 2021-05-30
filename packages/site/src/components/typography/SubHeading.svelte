@@ -4,7 +4,7 @@
   export let size = "M"
 </script>
 
-<span class="{size}">
+<span class={size}>
   <Text {primary}>
     <slot />
   </Text>
@@ -23,7 +23,6 @@
   }
 
   span {
-
   }
 
   @media only screen and (max-width: 640px) {

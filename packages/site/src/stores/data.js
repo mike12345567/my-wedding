@@ -11,7 +11,7 @@ export function createDataStore() {
         state.onMain = onMain
         return state
       })
-    }
+    },
   }
 }
 

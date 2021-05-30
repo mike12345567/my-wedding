@@ -33,7 +33,7 @@
         base.push({})
       }
     }
-    guests = [ ...base ]
+    guests = [...base]
   }
 
   function emailChanged() {
@@ -56,20 +56,24 @@
     <div class="mainText">
       <Text>
         {config.getRSVP1()}
-        <br>
+        <br />
         {config.getRSVP2()}
       </Text>
-      <br>
-      <Text bold>
-        Meal Choices
-      </Text>
+      <br />
+      <Text bold>Meal Choices</Text>
       <Text>
         {#each config.getMeals() as meal}
-          <b>{meal.type}</b> - {meal.details}<br>
+          <b>{meal.type}</b> - {meal.details}<br />
         {/each}
       </Text>
     </div>
-    <Input width="70%" label="Email" bind:value={email} on:change={emailChanged} bind:error />
+    <Input
+      width="70%"
+      label="Email"
+      bind:value={email}
+      on:change={emailChanged}
+      bind:error
+    />
     <Select
       width="70%"
       label="Number of guests"
@@ -101,7 +105,9 @@
     {/if}
     <div class="buttons">
       <div class="right">
-        <Button width="200px" bind:disabled on:click={saveRSVP}>Send RSVP</Button>
+        <Button width="200px" bind:disabled on:click={saveRSVP}
+          >Send RSVP</Button
+        >
       </div>
     </div>
   </Form>

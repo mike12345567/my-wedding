@@ -3,11 +3,7 @@
   export let disabled = false
 </script>
 
-<button
-  on:click
-  {disabled}
-  style="width: {width ? width : '100%'}"
->
+<button on:click {disabled} style="width: {width ? width : '100%'}">
   <slot />
 </button>
 
