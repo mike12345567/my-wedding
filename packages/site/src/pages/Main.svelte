@@ -10,6 +10,7 @@
     Text,
     Layout,
     Transition,
+    DownArrow,
   } from "../components"
 
   const date = config.getDate()
@@ -30,6 +31,9 @@
         <Text size="M" shadow weight="600">
           We can't wait to share our big day with you.
         </Text>
+        <div class="arrow">
+          <DownArrow size="50px" />
+        </div>
       </div>
     </div>
     <div class="right">
@@ -141,6 +145,10 @@
     height: 300px;
   }
 
+  .arrow {
+    display: none;
+  }
+
   @media screen and (max-width: 1024px) {
     .body {
       flex-direction: column;
@@ -157,6 +165,12 @@
 
     .corner img {
       transform-origin: bottom right;
+    }
+
+    .arrow {
+      display: block;
+      width: 100%;
+      margin-top: 40px;
     }
   }
 </style>
