@@ -20,7 +20,7 @@
         Please use the password provided on your invitation to login.
       </Text>
     </div>
-    <Input type="password" label="Password" bind:value={password} />
+    <Input type="password" label="Password" width="60%" bind:value={password} />
     <div class="buttons">
       <div class="right">
         <Button width="200px">Login</Button>

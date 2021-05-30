@@ -32,8 +32,9 @@
         {/each}
       </Text>
     </div>
-    <Input label="Email" bind:value={email} />
+    <Input width="70%" label="Email" bind:value={email} />
     <Select
+      width="70%"
       label="Number of guests"
       bind:value={guestNumber}
       options={[1, 2, 3, 4, 5, 6]}

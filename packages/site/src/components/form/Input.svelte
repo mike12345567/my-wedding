@@ -16,7 +16,7 @@
   }
 </script>
 
-<div>
+<div style="{width ? `width: ${width}` : ''}">
   {#if label}
     <label class="block text-sm font-bold mb-2" for={label}>
       {label || ""}
@@ -25,7 +25,7 @@
   <div>
     <div id={label}>
       <input
-        style={width ? "width:" + width : ""}
+        style="{width ? 'width: 100%' : ''}"
         class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
         {disabled}
         {readonly}

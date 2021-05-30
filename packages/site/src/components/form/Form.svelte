@@ -16,7 +16,7 @@
   .border {
     border-radius: 15px;
     border: 4px solid var(--text-color);
-    width: 45%;
+    width: 35%;
     height: auto;
     min-width: 360px;
   }
