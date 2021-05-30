@@ -4,7 +4,7 @@
 </script>
 
 <button
-  on:click|preventDefault
+  on:click
   {disabled}
   style="width: {width ? width : '100%'}"
 >

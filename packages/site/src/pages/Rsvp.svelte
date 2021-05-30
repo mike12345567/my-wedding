@@ -10,12 +10,16 @@
     Form,
   } from "../components"
   import config from "../common/config"
-  import { onMount } from "svelte"
+  import { validateEmail } from "../common/utils"
 
   let guestNumber = 1
-  let email
+  let email = ""
   let guests
+  let error = null
+  let lastEmail = ""
   $: updateGuests(guestNumber)
+  $: error = lastEmail !== email ? null : error
+  $: disabled = !!error
 
   function updateGuests(count) {
     let base = guests
@@ -33,7 +37,16 @@
   }
 
   function emailChanged() {
+    lastEmail = email
+    if (email && !validateEmail(email)) {
+      error = "Invalid email address"
+      return
+    }
     // TODO: check if they've already responded
+  }
+
+  async function saveRSVP() {
+    console.log(guests)
   }
 </script>
 
@@ -56,7 +69,7 @@
         {/each}
       </Text>
     </div>
-    <Input width="70%" label="Email" bind:value={email} on:change={emailChanged} />
+    <Input width="70%" label="Email" bind:value={email} on:change={emailChanged} bind:error />
     <Select
       width="70%"
       label="Number of guests"
@@ -68,17 +81,18 @@
         <Layout gap="S" justifyItems="center">
           {#each guests as guest}
             <div class="guest">
-              <Text weight="600">Guest {guests.indexOf(guest) + 1}</Text>
-              <div class="name">
-                <Input width="100%" label="Name" />
-              </div>
+              <Text bold>Guest {guests.indexOf(guest) + 1}</Text>
+              <Input width="100%" label="Name" bind:value={guest.name} />
               <div class="bottomLine">
                 <Select
                   width="180px"
                   label="Meal"
+                  bind:value={guest.choice}
                   options={["Meat", "Veg"]}
                 />
-                <Input label="Dietary notes" />
+                <div class="diet">
+                  <Input label="Dietary notes" bind:value={guest.dietary} />
+                </div>
               </div>
             </div>
           {/each}
@@ -87,7 +101,7 @@
     {/if}
     <div class="buttons">
       <div class="right">
-        <Button width="200px">Send RSVP</Button>
+        <Button width="200px" bind:disabled on:click={saveRSVP}>Send RSVP</Button>
       </div>
     </div>
   </Form>
@@ -108,7 +122,7 @@
     display: flex;
   }
 
-  .name {
+  .diet {
     flex-grow: 2;
   }
 

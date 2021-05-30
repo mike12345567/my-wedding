@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte"
 
   export let options = []
-  export let value = null
+  export let value = options.length ? options[0] : null
   export let label = null
   export let disabled = false
   export let readonly = false
