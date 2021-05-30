@@ -1,5 +1,5 @@
 <script>
-  import { Layout } from "../"
+  import { Layout, Text } from "../"
   import { Link } from "svelte-routing"
 
   export let open = false
@@ -25,6 +25,13 @@
       {/each}
     </Layout>
   </nav>
+  <div class="createdBy">
+    <Text size="XXS">
+      <i>Created By</i>
+      <br>
+      Michael Drury and Andrew Kingston
+    </Text>
+  </div>
 </aside>
 
 <style>
@@ -38,7 +45,6 @@
     border-style: none solid;
     border-width: 0 2px;
     border-color: var(--text-color);
-    border-radius: 0 10px 10px 0;
   }
 
   p {
@@ -48,6 +54,12 @@
   .open {
     z-index: 10;
     left: 0;
+  }
+
+  .createdBy {
+    position: absolute;
+    bottom: 18px;
+    right: 20px;
   }
 
   @media only screen and (max-width: 640px) {

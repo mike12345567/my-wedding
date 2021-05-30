@@ -38,6 +38,9 @@
   .XS {
     font-size: 1em;
   }
+  .XXS {
+    font-size: 0.75em;
+  }
   .L {
     font-size: 1.75em;
   }
