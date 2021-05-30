@@ -45,17 +45,17 @@
           {#each [...Array(guestNumber).keys()] as number}
             <div class="guest">
               <Text weight="600">Guest {number + 1}</Text>
-              <div class="topLine">
-                <div class="name">
-                  <Input width="100%" label="Name" />
-                </div>
+              <div class="name">
+                <Input width="100%" label="Name" />
+              </div>
+              <div class="bottomLine">
                 <Select
-                  width="100px"
+                  width="180px"
                   label="Meal"
                   options={["Meat", "Veg"]}
                 />
+                <Input label="Dietary notes" />
               </div>
-              <Input label="Dietary requirements" />
             </div>
           {/each}
         </Layout>
@@ -92,7 +92,7 @@
     width: 80%;
   }
 
-  .topLine {
+  .bottomLine {
     display: flex;
     gap: 20px;
   }

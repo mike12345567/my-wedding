@@ -1,6 +1,7 @@
 <script>
   import { Sidebar, Hamburger } from "../"
   import { Images } from "../../common/images"
+  import { data } from "../../stores"
 
   export let loggedIn
 
@@ -13,9 +14,11 @@
     <Hamburger bind:open />
   </div>
 {/if}
-<div class="header">
-  <img src={Images.LOGO} height="100%" alt="floral heart" />
-</div>
+{#if !$data.onMain}
+  <div class="header">
+    <img src={Images.LOGO} height="100%" alt="floral heart" />
+  </div>
+{/if}
 
 <style>
   :global(body) {

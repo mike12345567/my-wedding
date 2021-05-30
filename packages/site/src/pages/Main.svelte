@@ -12,12 +12,17 @@
     Transition,
     DownArrow,
   } from "../components"
+  import { onMount, onDestroy } from "svelte"
+  import { data } from "../stores"
 
   const date = config.getDate()
   const ukDate = new Date(config.getDate()).toString()
   const colors = config.getColors()
 
   $: daysUntil = date ? getTimeUntil(date) : "No date provided"
+
+  onMount(() => data.setOnMain(true))
+  onDestroy(() => data.setOnMain(false))
 </script>
 
 <Transition>
@@ -107,11 +112,10 @@
 
   .logo {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    right: 20px;
+    top: 15px;
     height: 120px;
   }
-
 
   .heading {
     position: absolute;
