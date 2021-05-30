@@ -11,10 +11,6 @@
 </span>
 
 <style>
-  span {
-    font-weight: 100;
-  }
-
   .S {
     font-size: 2em;
   }
@@ -31,9 +27,15 @@
   }
 
   @media only screen and (max-width: 640px) {
-    span {
+    .S {
       font-size: 1.5em;
-      font-weight: 100;
+    }
+    .M {
+      font-size: 2em;
+    }
+    .L {
+      font-size: 3em;
+      line-height: 1.2;
     }
   }
 </style>

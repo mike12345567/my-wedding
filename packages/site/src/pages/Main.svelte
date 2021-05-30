@@ -21,81 +21,142 @@
 
 <Transition>
   <div class="body">
-    <div class="heading">
-      <Heading shadow>
-        {config.getHerName()} & {config.getHisName()}
-      </Heading>
-      <Text size="M" shadow weight="600">
-        We can't wait to share our big day with you.
-      </Text>
-    </div>
     <div class="left">
-      <img src={Images.US} width="100%" alt="us" />
+      <div class="image" style="background-image: url('{Images.US}')" />
+      <div class="heading">
+        <Heading shadow>
+          {config.getHerName()} & {config.getHisName()}
+        </Heading>
+        <Text size="M" shadow weight="600">
+          We can't wait to share our big day with you.
+        </Text>
+      </div>
     </div>
     <div class="right">
-      <Layout gap="M" justifyItems="center">
-        <SubHeading primary size="L">
-          {config.getAddress().name}, {config.getAddress().town}
-        </SubHeading>
-        <Text size="L">
-          {formatDate(date, "dddd, Do MMMM, YYYY")}
-        </Text>
-        <Link to="site/rsvp">
-          <Button width="220px">Respond Here</Button>
-        </Link>
-      </Layout>
-    </div>
-    <div class="corner">
-      <img src={Images.CORNER} alt="corner" />
+      <img class="logo" src={Images.LOGO} alt="floral heart" />
+      <div class="content">
+        <Layout gap="M" justifyItems="center">
+          <SubHeading primary size="L">
+            {config.getAddress().name}, {config.getAddress().town}
+          </SubHeading>
+          <Text size="L">
+            {formatDate(date, "dddd, Do MMMM, YYYY")}
+          </Text>
+          <Link to="site/rsvp">
+            <Button width="220px">Respond Here</Button>
+          </Link>
+        </Layout>
+      </div>
+      <div class="corner">
+        <img src={Images.CORNER} alt="corner" />
+      </div>
     </div>
   </div>
 </Transition>
 
 <style>
+  :global(.header img) {
+    display: none;
+  }
+
   .body {
-    padding: 1em;
-    margin: 0 auto;
-    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    display: flex; flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+  }
+
+  .left, .right {
+    position: relative;
+    height: 100%;
   }
 
   .left {
-    position: absolute;
+    flex: 1 1 auto;
     filter: grayscale(70%);
-    height: 100%;
-    left: -20%;
-    bottom: 0;
-    width: 80%;
-    overflow: hidden;
+  }
+
+  .image {
+    margin-top: -100px;
+    height: calc(100% + 100px);
+    width: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .right {
-    position: absolute;
-    right: 6%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30%;
+    flex: 0 0 30%;
+    min-width: 480px;
     text-align: center;
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+      z-index: 1;
   }
 
+  .logo {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 120px;
+  }
+
+
   .heading {
-    left: 4em;
     position: absolute;
     z-index: 1;
     bottom: 3em;
     color: white;
-    text-align: left;
+    text-align: center;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    padding: 40px;
   }
 
+  .content {
+      z-index: 1;
+  }
   .corner {
     position: absolute;
     bottom: 0;
     right: 0;
     filter: grayscale(10%);
+    z-index: 0;
   }
 
   .corner img {
     transform-origin: bottom right;
     height: 300px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .body {
+      flex-direction: column;
+    }
+
+    .left {
+      flex: 0 0 100vh;
+    }
+
+    .right {
+      flex: 0 0 100vh;
+      min-width: 0;
+    }
+
+    .corner img {
+      transform-origin: bottom right;
+    }
   }
 </style>
