@@ -17,7 +17,7 @@
   }
 </script>
 
-<aside class="absolute w-full h-full border-r-2 shadow-lg" class:open>
+<aside class="absolute w-full h-full" class:open>
   <nav class="p-20 text-xl">
     <Layout gap="XS" topPadding="20px">
       {#each links as link}
@@ -29,11 +29,16 @@
 
 <style>
   aside {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
     left: -100%;
     transition: left 0.3s ease-in-out;
     width: 400px;
     background-color: var(--primary-color);
     color: var(--text-color);
+    border-style: none solid;
+    border-width: 0 2px;
+    border-color: var(--text-color);
+    border-radius: 0 10px 10px 0;
   }
 
   p {

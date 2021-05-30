@@ -14,7 +14,6 @@
   $: disabled = !password
 
   async function login() {
-    console.log("TRY LOGIN")
     await auth.login(password)
   }
 </script>
