@@ -14,6 +14,7 @@ export function createDataStore() {
   const store = writable({
     onMain: false,
     rsvps: null,
+    adminInfo: null,
   })
   return {
     subscribe: store.subscribe,
@@ -28,7 +29,7 @@ export function createDataStore() {
       if (id) {
         body.id = id
       }
-      const response = await api.post(`/api/rsvp`, body)
+      const response = await api.post("/api/rsvp", body)
       if (response.status !== 200) {
         throw "Unable to save RSVP"
       }
@@ -40,6 +41,18 @@ export function createDataStore() {
         throw "Unable to retrieve RSVP"
       }
       return updateRsvp(store, response)
+    },
+    async getAdminInfo() {
+      const response = await api.get("/api/rsvp/all")
+      if (response.status !== 200) {
+        throw "Forbidden"
+      }
+      const json = await response.json()
+      store.update(state => {
+        state.adminInfo = json
+        return state
+      })
+      return json
     }
   }
 }

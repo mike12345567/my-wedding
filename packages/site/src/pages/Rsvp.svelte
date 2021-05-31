@@ -28,7 +28,6 @@
   function updateGuests(count, foundGuests) {
     if (foundGuests) {
       tempGuests = null
-      console.log(foundGuests)
       return foundGuests
     }
     let base = guests

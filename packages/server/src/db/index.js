@@ -43,12 +43,11 @@ exports.findRsvp = async email => {
   const rows = await CLIENT(TableNames.RSVP).where({
     email,
   })
-  if (rows && rows.length === 1) {
-    return rows[0]
-  }
-  return rows
+  return rows.length ? rows[0] : rows
 }
 
 exports.allRsvp = async () => {
-  return CLIENT(TableNames.RSVP).select("*")
+  const data = await CLIENT.from(TableNames.RSVP).select("*")
+  console.log(data)
+  return data
 }

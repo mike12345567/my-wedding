@@ -1,15 +1,22 @@
 <script>
+  import { createEventDispatcher } from "svelte"
+
   export let value = ""
   export let label = null
   export let disabled = false
   export let readonly = false
   export let error = null
-  export let password = "text"
   export let width
   export let type
 
+  const dispatch = createEventDispatcher()
   function typeAction(node) {
-    node.type = type;
+    node.type = type
+  }
+  function checkKeyPress(evt) {
+    if (evt?.key.toLowerCase() === "enter") {
+      dispatch("enter", true)
+    }
   }
 </script>
 
@@ -27,6 +34,7 @@
         {disabled}
         {readonly}
         bind:value
+        on:keypress={checkKeyPress}
         on:change
         on:click
         on:focus
@@ -50,8 +58,5 @@
   }
   label {
     white-space: nowrap;
-  }
-  .field {
-    width: 100%;
   }
 </style>

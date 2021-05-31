@@ -26,7 +26,7 @@ function getRsvpSaveValidation() {
 
 router
   .post("/api/rsvp", getRsvpSaveValidation(), controller.save)
-  .get("/api/rsvp/:email", controller.find)
   .get("/api/rsvp/all", admin, controller.allRsvp)
+  .get("/api/rsvp/:email", controller.find)
 
 module.exports = router
