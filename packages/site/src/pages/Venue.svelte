@@ -1,19 +1,31 @@
 <script>
-  import { Heading, Transition, Layout } from "../components"
+  import { Heading, Transition, Layout, Text } from "../components"
+  import config from "../common/config"
+
+  const hotelInfo = config.getHotelInfo(false)
 </script>
 
 <Transition>
   <div>
     <Layout justifyItems="center">
-      <Heading>Venue</Heading>
+      <div class="mainText">
+        <Heading>Venue</Heading>
+        <Text>{config.getVenueInfo()}</Text>
+        {#each hotelInfo as hotel}
+          <Text>{hotel}</Text>
+        {/each}
+      </div>
     </Layout>
   </div>
 </Transition>
 
 <style>
-  div {
-    width: 100%;
+  .mainText {
     color: var(--text-color);
+    text-align: center;
+    padding: 0 30px 0 30px;
+    width: 50%;
+    min-width: 360px;
   }
 </style>
 

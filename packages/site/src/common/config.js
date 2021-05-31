@@ -26,6 +26,12 @@ export default {
     }
     return `/${CONFIG.images.directory}/${path}`
   },
+  getImageLabel: imgName => {
+    if (CONFIG.imageLabels[imgName]) {
+      return CONFIG.imageLabels[imgName]
+    }
+    return CONFIG.imageLabels.custom[imgName]
+  },
   getPrimaryFont: () => {
     return CONFIG.fonts.primary
   },
@@ -53,4 +59,13 @@ export default {
   getGiftInfo: (full = true) => {
     return getInfoProp("gift", full)
   },
+  getVenueInfo: (full = true) => {
+    return getInfoProp("venue", full)
+  },
+  getScheduleInfo: (full = true) => {
+    return getInfoProp("schedule", full)
+  },
+  getGiftLink: () => {
+    return CONFIG.info.giftLink
+  }
 }

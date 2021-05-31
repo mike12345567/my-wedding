@@ -4,17 +4,20 @@
 </script>
 
 <Transition>
-  <div>
     <Layout justifyItems="center">
-      <Heading>Schedule</Heading>
-      <Text>When full details are known they will be found here.</Text>
+      <div class="mainText">
+        <Heading>Schedule</Heading>
+        <Text>When full details are known they will be found here.</Text>
+      </div>
     </Layout>
-  </div>
 </Transition>
 
 <style>
-  div {
-    width: 100%;
+  .mainText {
     color: var(--text-color);
+    text-align: center;
+    padding: 0 30px 0 30px;
+    width: 50%;
+    min-width: 360px;
   }
 </style>

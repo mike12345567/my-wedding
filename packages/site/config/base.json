@@ -14,6 +14,7 @@
       "Arrays are used",
       "To support multiline statements"
     ],
+    "giftLink": "",
     "schedule": [],
     "venue": [],
     "hotel": []
@@ -28,6 +29,9 @@
     "directory": "",
     "venueLarge": "",
     "venueMedium": "",
+    "custom": {}
+  },
+  "imageLabels": {
     "custom": {}
   },
   "colors": {
