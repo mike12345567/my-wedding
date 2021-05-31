@@ -2,7 +2,7 @@
   import {
     Transition,
     Layout,
-    SubHeading,
+    Heading,
     Input,
     Select,
     Button,
@@ -69,8 +69,10 @@
 </script>
 
 <Transition>
-  <Form center topPadding="80px">
-    <SubHeading primary>RSVP</SubHeading>
+  <div class="outer">
+    <Heading>RSVP</Heading>
+  </div>
+  <Form center>
     <div class="mainText">
       <Text>
         {config.getRSVP1()}
@@ -132,6 +134,12 @@
 </Transition>
 
 <style>
+  .outer {
+    width: 100%;
+    color: var(--text-color);
+    text-align: center;
+  }
+
   .mainText {
     padding: 0 40px 0 40px;
     text-align: center;

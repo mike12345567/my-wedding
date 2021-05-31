@@ -59,7 +59,7 @@
   .createdBy {
     position: absolute;
     bottom: 18px;
-    right: 20px;
+    left: 20px;
   }
 
   @media only screen and (max-width: 640px) {

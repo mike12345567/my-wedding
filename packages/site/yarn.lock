@@ -661,6 +661,11 @@ svelte-routing@^1.6.0:
   dependencies:
     svelte2tsx "^0.1.157"
 
+svelte-table@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/svelte-table/-/svelte-table-0.1.17.tgz#dd5faadf652cc867931850924bb7b4f219742519"
+  integrity sha512-NsharOKXSyNyMJcmiDvR781dRk8QZW7wxJzEWygFPJ/cPkqGpgh0TwnDXrLFE+ydrmmhSAXe9vB2HrEzdo2+ng==
+
 svelte2tsx@^0.1.157:
   version "0.1.191"
   resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.1.191.tgz#123484cbcdd84f1e2f4397a7fd8b70d71f60b749"

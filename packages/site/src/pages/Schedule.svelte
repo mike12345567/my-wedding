@@ -1,7 +1,18 @@
 <script>
-  import { Heading, Transition } from "../components"
+  import { Heading, Transition, Layout } from "../components"
 </script>
 
 <Transition>
-  <Heading>Schedule</Heading>
+  <div>
+    <Layout justifyItems="center">
+      <Heading>Schedule</Heading>
+    </Layout>
+  </div>
 </Transition>
+
+<style>
+  div {
+    width: 100%;
+    color: var(--text-color);
+  }
+</style>

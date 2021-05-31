@@ -51,5 +51,9 @@
       margin-right: 20px;
       margin-top: 15px;
     }
+
+    .hamburger {
+      padding-bottom: 35px;
+    }
   }
 </style>
