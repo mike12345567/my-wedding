@@ -45,6 +45,7 @@
     border-style: none solid;
     border-width: 0 2px;
     border-color: var(--text-color);
+    z-index: 10;
   }
 
   p {
@@ -52,7 +53,6 @@
   }
 
   .open {
-    z-index: 10;
     left: 0;
   }
 

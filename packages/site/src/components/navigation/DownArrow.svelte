@@ -47,11 +47,9 @@
   @-webkit-keyframes downarrow {
     0% {
       -webkit-transform: translateY(0);
-      opacity: 0.4;
     }
     100% {
       -webkit-transform: translateY(0.4em);
-      opacity: 0.9;
     }
   }
 

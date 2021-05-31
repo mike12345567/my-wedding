@@ -75,9 +75,9 @@
   <Form center>
     <div class="mainText">
       <Text>
-        {config.getRSVP1()}
+        {config.getRSVP(false)[0]}
         <br />
-        {config.getRSVP2()}
+        {config.getRSVP(false)[1]}
       </Text>
       <br />
       <Text bold>Meal Choices</Text>

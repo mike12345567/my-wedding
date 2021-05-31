@@ -4,7 +4,8 @@
   import { Main, Gifts, Rsvp, Schedule, Venue, Login, Admin } from "./pages"
   import { Header } from "./components"
   import { auth } from "./stores"
-  import { onMount } from "svelte"
+  import { onMount, setContext } from "svelte"
+  import { writable } from "svelte/store"
   import { SvelteToast } from "@zerodevx/svelte-toast"
 
   const date = config.getDate()
@@ -12,6 +13,8 @@
   const colors = config.getColors()
 
   export let url = window.location.pathname
+
+  setContext("header", new writable({ open: false }))
 
   onMount(async () => {
     await auth.self()
@@ -35,11 +38,12 @@
   style="--primary-color: {colors.primary};
  --text-color: {colors.text};
  --primary-font: {config.getPrimaryFont().name};
- --secondary-font: {config.getSecondaryFont().name}">
+ --secondary-font: {config.getSecondaryFont().name};
+ --accent-color: {colors.accent};">
   <SvelteToast />
   <Router url="{url}">
-    <Header loggedIn={$auth.loggedIn} />
     <div>
+      <Header loggedIn={$auth.loggedIn} />
       {#if $auth.loggedIn}
         <Route path="" component="{Main}" />
         <Route path="site/venue" component="{Venue}" />

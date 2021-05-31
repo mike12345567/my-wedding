@@ -2,16 +2,18 @@
   import { Sidebar, Hamburger } from "../"
   import { Images } from "../../common/images"
   import { data } from "../../stores"
+  import { getContext, onMount } from "svelte"
 
   export let loggedIn
-
-  let open = false
+  const state = getContext("header")
+  $: state.set({ open })
+  onMount(() => state.set({ open: false }))
 </script>
 
 {#if loggedIn}
-  <Sidebar bind:open />
+  <Sidebar bind:open={$state.open} />
   <div class="hamburger">
-    <Hamburger bind:open />
+    <Hamburger bind:open={$state.open} />
   </div>
 {/if}
 {#if !$data.onMain}

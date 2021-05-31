@@ -12,12 +12,12 @@
     Transition,
     DownArrow,
   } from "../components"
-  import { onMount, onDestroy } from "svelte"
+  import { onMount, onDestroy, getContext } from "svelte"
   import { data } from "../stores"
 
   const date = config.getDate()
   const ukDate = new Date(config.getDate()).toString()
-  const colors = config.getColors()
+  const headerState = getContext("header")
 
   $: daysUntil = date ? getTimeUntil(date) : "No date provided"
 
@@ -51,9 +51,12 @@
           <Text size="L">
             {formatDate(date, "dddd, Do MMMM, YYYY")}
           </Text>
-          <Link to="site/rsvp">
-            <Button width="220px">Respond Here</Button>
-          </Link>
+          <Layout gap="XS">
+            <Link to="site/rsvp">
+              <Button width="220px">Respond Here</Button>
+            </Link>
+            <Button width="220px" muted on:click={headerState.set({ open: !$headerState.open })}>View Details</Button>
+          </Layout>
         </Layout>
       </div>
       <div class="corner">
@@ -157,7 +160,7 @@
     }
 
     .left {
-      flex: 0 0 100vh;
+      flex: 0 0 90vh;
     }
 
     .right {

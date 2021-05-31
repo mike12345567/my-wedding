@@ -9,8 +9,14 @@
     "postcode": ""
   },
   "info": {
-    "rsvp1": "Please RSVP below.",
-    "gift": []
+    "rsvp": ["Please RSVP below."],
+    "gift": [
+      "Arrays are used",
+      "To support multiline statements"
+    ],
+    "schedule": [],
+    "venue": [],
+    "hotel": []
   },
   "meals": [
     {

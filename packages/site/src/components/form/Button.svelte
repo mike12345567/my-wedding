@@ -1,19 +1,26 @@
 <script>
   export let width
   export let disabled = false
+  export let muted = false
 </script>
 
-<button on:click {disabled} style="width: {width ? width : '100%'}">
+<button class:muted on:click {disabled} style="width: {width ? width : '100%'}">
   <slot />
 </button>
 
 <style>
   button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--primary-color);
     border: 2px solid var(--text-color);
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
+    font-weight: bold;
+  }
+
+  .muted {
+    background-color: var(--primary-color);
+    color: var(--text-color);
   }
 
   button:hover:enabled {

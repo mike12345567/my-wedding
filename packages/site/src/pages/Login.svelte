@@ -31,7 +31,7 @@
     <div class="mainText">
       <Text>Please use the password provided on your invitation to login.</Text>
     </div>
-    <Input type="password" label="Password" width="60%" on:enter={login} bind:value={password} />
+    <Input label="Password" width="60%" on:enter={login} bind:value={password} />
     <div class="buttons">
       <div class="right">
         <Button width="200px" bind:disabled on:click={login}>Login</Button>

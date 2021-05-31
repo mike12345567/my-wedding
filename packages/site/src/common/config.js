@@ -4,6 +4,11 @@ export function getFullConfig() {
   return CONFIG
 }
 
+function getInfoProp(prop, full = true) {
+  const property = CONFIG.info[prop]
+  return full ? property.join("") : property
+}
+
 export default {
   getHisName: () => {
     return CONFIG.hisName
@@ -39,13 +44,13 @@ export default {
   getMeals: () => {
     return CONFIG.meals
   },
-  getRSVP1: () => {
-    return CONFIG.info.rsvp1
+  getRSVP: (full = true) => {
+    return getInfoProp("rsvp", full)
   },
-  getRSVP2: () => {
-    return CONFIG.info.rsvp2
+  getHotelInfo: (full = true) => {
+    return getInfoProp("hotel", full)
   },
-  getGiftInfo: () => {
-    return CONFIG.info.gift.join("")
+  getGiftInfo: (full = true) => {
+    return getInfoProp("gift", full)
   },
 }
