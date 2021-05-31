@@ -6,7 +6,7 @@
 <Transition>
     <Layout justifyItems="center">
       <div class="mainText">
-        <Heading>Schedule</Heading>
+        <Heading>On the day</Heading>
         <Text>When full details are known they will be found here.</Text>
       </div>
     </Layout>

@@ -3,36 +3,16 @@
   import { data } from "../stores"
   import { onMount } from "svelte"
   import { navigate } from "svelte-routing"
-  import Table from "svelte-table"
+  import DataTable from "@fouita/data-table"
 
   let adminInfo
   $: rows = getRows(adminInfo)
-  const columns = [
-    {
-      key: "email",
-      title: "Email",
-      value: v => v.email,
-      sortable: true,
-    },
-    {
-      key: "name",
-      title: "Name",
-      value: v => v.name,
-      sortable: true,
-    },
-    {
-      key: "dietary",
-      title: "Dietary requirements",
-      value: v => v.dietary,
-      sortable: true,
-    },
-    {
-      key: "choice",
-      title: "Meal choice",
-      value: v => v.choice,
-      sortable: true,
-    }
-  ];
+  const head = {
+    email: "Email",
+    name: "Name",
+    dietary: "Dietary req",
+    choice: "Meal",
+  }
 
   onMount(async () => {
     try {
@@ -60,7 +40,7 @@
 <div class="outer">
   <SubHeading>Administration</SubHeading>
   <div class="inner">
-    <Table columns="{columns}" rows="{rows}" />
+    <DataTable {head} {rows} />
   </div>
 </div>
 
@@ -72,11 +52,10 @@
     color: var(--text-color);
   }
   .inner {
-    padding: 20px;
     margin: auto;
     display: block;
     width: 80%;
     border: solid var(--text-color) 3px;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 </style>

@@ -23,6 +23,11 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@fouita/data-table@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@fouita/data-table/-/data-table-0.0.2.tgz#f0e31af5ecf414b9485f242d2e4ae36f9ad8c57d"
+  integrity sha512-f3n3nwxB0CaRA3k75hcxuESbWkNtxem6yzdK8nw9LwBRDoDYUa8l36dT0QdFbDzKzyQOZYrb/3jovdFMwEY36w==
+
 "@polka/url@^1.0.0-next.9":
   version "1.0.0-next.12"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.12.tgz#431ec342a7195622f86688bbda82e3166ce8cb28"
@@ -660,11 +665,6 @@ svelte-routing@^1.6.0:
   integrity sha512-+DbrSGttLA6lan7oWFz1MjyGabdn3tPRqn8Osyc471ut2UgCrzM5x1qViNMc2gahOP6fKbKK1aNtZMJEQP2vHQ==
   dependencies:
     svelte2tsx "^0.1.157"
-
-svelte-table@^0.1.17:
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/svelte-table/-/svelte-table-0.1.17.tgz#dd5faadf652cc867931850924bb7b4f219742519"
-  integrity sha512-NsharOKXSyNyMJcmiDvR781dRk8QZW7wxJzEWygFPJ/cPkqGpgh0TwnDXrLFE+ydrmmhSAXe9vB2HrEzdo2+ng==
 
 svelte2tsx@^0.1.157:
   version "0.1.191"

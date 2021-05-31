@@ -62,6 +62,15 @@ export default {
   getVenueInfo: (full = true) => {
     return getInfoProp("venue", full)
   },
+  getVenueLink: () => {
+    return CONFIG.info.venueLink
+  },
+  getDirections: () => {
+    return getInfoProp("directions", true)
+  },
+  getParkingInfo: () => {
+    return getInfoProp("parking", true)
+  },
   getScheduleInfo: (full = true) => {
     return getInfoProp("schedule", full)
   },

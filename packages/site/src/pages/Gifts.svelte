@@ -7,7 +7,7 @@
   <Layout justifyItems="center">
     <div class="mainText">
       <Heading>Gifts</Heading>
-      <Text>
+      <Text size="S">
         {config.getGiftInfo()}
       </Text>
     </div>
@@ -36,12 +36,13 @@
 
   .images {
     display: flex;
-    width: 80%;
+    width: 60%;
   }
 
   @media screen and (max-width: 1024px) {
     .images {
       flex-direction: column;
+      width: 80%;
     }
   }
 </style>
