@@ -47,7 +47,5 @@ exports.findRsvp = async email => {
 }
 
 exports.allRsvp = async () => {
-  const data = await CLIENT.from(TableNames.RSVP).select("*")
-  console.log(data)
-  return data
+  return CLIENT.from(TableNames.RSVP).select("*")
 }

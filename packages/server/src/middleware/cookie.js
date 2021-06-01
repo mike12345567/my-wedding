@@ -17,7 +17,6 @@ module.exports = (noAuthPatterns = []) => {
   return async (ctx, next) => {
     const url = ctx.request.url.toLowerCase()
     const method = ctx.request.method.toLowerCase()
-    console.log(url)
     const matched = noAuthPatterns.find(pattern => doesMatch(pattern, url, method))
     if (matched) {
       return next()

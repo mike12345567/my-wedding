@@ -12,7 +12,7 @@
       </Text>
     </div>
     <a href="{config.getGiftLink()}">
-      <Button width="180px">Gift site</Button>
+      <Button width="300px"><Text size="S">Give a gift via Honeyfund</Text></Button>
     </a>
     <div class="images">
       <LabeledImage margin="10px" imageName="glong" />

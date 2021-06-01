@@ -52,6 +52,10 @@ mainRouter
         method: "GET",
         route: "/",
       },
+      {
+        method: "GET",
+        route: "/site/",
+      }
     ])
   )
   .use(api.routes())
