@@ -56,8 +56,9 @@
           <Text>{config.getDayInfo()}</Text>
           <SubHeading primary>Wedding Party</SubHeading>
           <Text>
-            We want to thank everyone who is able to join us on our big day and here we want to pay special thanks
-            to those people that have helped us make this a reality!
+            We want to thank everyone who is able to join us on our big day and
+            here we want to pay special thanks to those people that have helped
+            us make this a reality!
           </Text>
         </Layout>
         <div class="party">
