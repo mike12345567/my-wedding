@@ -1,5 +1,12 @@
 <script>
-  import { Heading, SubHeading, Transition, Layout, Text, Button } from "../components"
+  import {
+    Heading,
+    SubHeading,
+    Transition,
+    Layout,
+    Text,
+    Button,
+  } from "../components"
   import config from "../common/config"
   import { Images } from "../common/images"
 
@@ -12,7 +19,7 @@
       <div>
         <Heading>Venue</Heading>
         <Text size="S">{config.getVenueInfo()}</Text>
-        <a href="{config.getVenueLink()}">
+        <a href={config.getVenueLink()}>
           <Text size="S">Our Venue</Text>
         </a>
       </div>
@@ -32,7 +39,7 @@
       </div>
     </Layout>
     <div class="image">
-      <img src="{Images.VENUE_MED}" alt="venue" />
+      <img src={Images.VENUE_MED} alt="venue" />
     </div>
   </div>
 </Transition>
@@ -70,4 +77,3 @@
     }
   }
 </style>
-

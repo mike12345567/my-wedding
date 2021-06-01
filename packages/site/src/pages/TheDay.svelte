@@ -4,12 +4,12 @@
 </script>
 
 <Transition>
-    <Layout justifyItems="center">
-      <div class="mainText">
-        <Heading>On the day</Heading>
-        <Text>When full details are known they will be found here.</Text>
-      </div>
-    </Layout>
+  <Layout justifyItems="center">
+    <div class="mainText">
+      <Heading>On the day</Heading>
+      <Text>When full details are known they will be found here.</Text>
+    </div>
+  </Layout>
 </Transition>
 
 <style>

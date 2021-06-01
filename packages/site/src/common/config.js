@@ -76,5 +76,5 @@ export default {
   },
   getGiftLink: () => {
     return CONFIG.info.giftLink
-  }
+  },
 }

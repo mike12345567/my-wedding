@@ -55,7 +55,12 @@
             <Link to="site/rsvp">
               <Button width="220px">Respond Here</Button>
             </Link>
-            <Button width="220px" muted on:click={headerState.set({ open: !$headerState.open })}>View Details</Button>
+            <Button
+              width="220px"
+              muted
+              on:click={headerState.set({ open: !$headerState.open })}
+              >View Details</Button
+            >
           </Layout>
         </Layout>
       </div>

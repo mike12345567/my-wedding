@@ -17,7 +17,6 @@
   onMount(async () => {
     try {
       adminInfo = await data.getAdminInfo()
-
     } catch (err) {
       navigate("/", { replace: true })
     }

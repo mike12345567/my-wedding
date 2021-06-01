@@ -32,10 +32,12 @@ exports.saveRsvp = async (email, guests, id = undefined) => {
       guests: JSON.stringify(guests),
     })
   } else {
-    await CLIENT(TableNames.RSVP).where({ id }).update({
-      email,
-      guests: JSON.stringify(guests),
-    })
+    await CLIENT(TableNames.RSVP)
+      .where({ id })
+      .update({
+        email,
+        guests: JSON.stringify(guests),
+      })
   }
 }
 
