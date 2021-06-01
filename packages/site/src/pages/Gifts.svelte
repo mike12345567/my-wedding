@@ -34,7 +34,7 @@
   .mainText {
     color: var(--text-color);
     text-align: center;
-    padding: 0 30px 0 30px;
+    margin: 0 30px 0 30px;
     width: 50%;
     min-width: 360px;
   }

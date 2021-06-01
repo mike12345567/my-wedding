@@ -8,6 +8,17 @@
     "town": "",
     "postcode": ""
   },
+  "party": {
+    "brideFather": "",
+    "brideMother": "",
+    "groomMother": "",
+    "groomFather": "",
+    "bestMan": "",
+    "chiefMaid": "",
+    "groomsmen": [],
+    "bridesmaids": [],
+    "ushers": []
+  },
   "info": {
     "rsvp": ["Please RSVP below."],
     "gift": [

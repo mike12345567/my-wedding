@@ -19,8 +19,9 @@
   setContext("header", new writable({ open: false }))
 
   function checkPath(loggedIn) {
-    if (!loggedIn) {
+    if (loggedIn === false) {
       navigate("/")
+      console.log("NAVIGATING!")
     }
   }
 

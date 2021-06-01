@@ -11,6 +11,9 @@
 </span>
 
 <style>
+  .XS {
+    font-size: 1.5em;
+  }
   .S {
     font-size: 2em;
   }
