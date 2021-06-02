@@ -17,7 +17,7 @@ function getRsvpSaveValidation() {
         Joi.object({
           name: Joi.string().required(),
           choice: Joi.string().valid(...getMealTypes()),
-          dietary: Joi.string().optional(),
+          dietary: Joi.string().optional().allow("", null),
         }).unknown(false)
       ).required()
     }).unknown(false).required(),
