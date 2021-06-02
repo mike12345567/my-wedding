@@ -6,6 +6,7 @@ async function updateUser(store, response) {
   store.update(state => {
     state.user = json
     state.loggedIn = !!json
+    state.admin = state.user?.admin
     return state
   })
   return json
@@ -15,6 +16,7 @@ export function createAuthStore() {
   const store = writable({
     user: null,
     loggedIn: null,
+    admin: null,
   })
   return {
     subscribe: store.subscribe,

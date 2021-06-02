@@ -1,19 +1,28 @@
 <script>
   import { Layout, Text } from "../"
   import { Link } from "svelte-routing"
+  import { auth } from "../../stores"
 
   export let open = false
 
-  let links = [
-    { to: "", text: "Home" },
-    { to: "site/venue", text: "Venue" },
-    { to: "site/theday", text: "On the day" },
-    { to: "site/gifts", text: "Gifts" },
-    { to: "site/rsvp", text: "RSVP" },
-  ]
+  $: links = updateLinks($auth.user.admin)
 
   function linkClick() {
     open = false
+  }
+
+  function updateLinks(isAdmin) {
+    const links = [
+      { to: "", text: "Home" },
+      { to: "site/venue", text: "Venue" },
+      { to: "site/theday", text: "On the day" },
+      { to: "site/gifts", text: "Gifts" },
+      { to: "site/rsvp", text: "RSVP" },
+    ]
+    if (isAdmin) {
+      links.push({ to: "site/admin", text: "Admin" })
+    }
+    return links
   }
 </script>
 
