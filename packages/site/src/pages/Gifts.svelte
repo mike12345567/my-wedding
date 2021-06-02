@@ -51,6 +51,7 @@
   .images {
     display: flex;
     width: 60%;
+    padding-bottom: 100px;
   }
 
   @media screen and (max-width: 1024px) {

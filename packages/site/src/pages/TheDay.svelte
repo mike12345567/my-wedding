@@ -14,7 +14,8 @@
       fatherBride = config.getFatherOfBride(),
       motherBride = config.getMotherOfBride(),
       motherGroom = config.getMotherOfGroom(),
-      fatherGroom = config.getFatherOfGroom()
+      fatherGroom = config.getFatherOfGroom(),
+      stepFatherGroom = config.getStepFatherOfGroom()
     if (chief) {
       arr.push({ title: "Chief bridesmaid", name: chief })
     }
@@ -38,6 +39,9 @@
     }
     if (motherGroom) {
       arr.push({ title: "Mother of groom", name: motherGroom })
+    }
+    if (stepFatherGroom) {
+      arr.push({ title: "Step father of groom", name: stepFatherGroom })
     }
     if (fatherGroom) {
       arr.push({ title: "Father of groom", name: fatherGroom })
@@ -76,7 +80,7 @@
   .all {
     color: var(--text-color);
     text-align: center;
-    padding: 0 30px 0 30px;
+    padding: 0 30px 100px 30px;
     width: 50%;
     min-width: 360px;
     margin: auto;

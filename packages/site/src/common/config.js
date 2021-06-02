@@ -98,8 +98,20 @@ export default {
   getMotherOfBride: () => {
     return CONFIG.party.brideMother
   },
+  getStepMotherOfBride: () => {
+    return CONFIG.party.brideStepMother
+  },
+  getStepMotherOfGroom: () => {
+    return CONFIG.party.groomStepMother
+  },
   getFatherOfGroom: () => {
     return CONFIG.party.groomFather
+  },
+  getStepFatherOfGroom: () => {
+    return CONFIG.party.groomStepFather
+  },
+  getStepFatherOfBride: () => {
+    return CONFIG.party.brideStepFather
   },
   getFatherOfBride: () => {
     return CONFIG.party.brideFather
