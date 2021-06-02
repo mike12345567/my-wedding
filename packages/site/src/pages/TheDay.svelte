@@ -49,18 +49,17 @@
 <Transition>
   <div class="all">
     <Layout justifyItems="center">
-      <div class="mainText">
-        <Layout>
+        <div>
           <Heading>On the day</Heading>
           <SubHeading primary>Schedule</SubHeading>
           <Text>{config.getDayInfo()}</Text>
           <SubHeading primary>Wedding Party</SubHeading>
-          <Text>
-            We want to thank everyone who is able to join us on our big day and
-            here we want to pay special thanks to those people that have helped
-            us make this a reality!
-          </Text>
-        </Layout>
+        </div>
+        <Text>
+          We want to thank everyone who is able to join us on our big day and
+          here we want to pay special thanks to those people that have helped
+          us make this a reality!
+        </Text>
         <div class="party">
           {#each party as member}
             <div>
@@ -69,26 +68,22 @@
             </div>
           {/each}
         </div>
-      </div>
     </Layout>
   </div>
 </Transition>
 
 <style>
-  .mainText {
-    width: 50%;
-    min-width: 360px;
-    margin: 0 30px 0 30px;
-  }
-
   .all {
     color: var(--text-color);
     text-align: center;
-    width: 100%;
+    padding: 0 30px 0 30px;
+    width: 50%;
+    min-width: 360px;
+    margin: auto;
   }
 
   .party {
-    padding: 30px;
+    margin-left: 0;
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 20px;

@@ -24,17 +24,17 @@
         </a>
       </div>
       <div>
-        <SubHeading size="S">Hotels</SubHeading>
+        <SubHeading primary>Hotels</SubHeading>
         {#each hotelInfo as hotel}
           <Text size="S">{hotel}</Text>
         {/each}
       </div>
       <div>
-        <SubHeading size="S">Directions</SubHeading>
+        <SubHeading primary>Directions</SubHeading>
         <Text size="S">{config.getDirections()}</Text>
       </div>
       <div>
-        <SubHeading size="S">Parking</SubHeading>
+        <SubHeading primary>Parking</SubHeading>
         <Text size="S">{config.getParkingInfo()}</Text>
       </div>
     </Layout>

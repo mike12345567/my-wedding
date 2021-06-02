@@ -11,18 +11,22 @@
 </script>
 
 <Transition>
+  <div class="all">
+    <Layout justifyItems="center">
+      <div class="mainText">
+        <Heading>Gifts</Heading>
+        <Text size="S">
+          {config.getGiftInfo()}
+        </Text>
+      </div>
+      <a href={config.getGiftLink()}>
+        <Button width="300px"
+          ><Text size="S">Give a gift via Honeyfund</Text></Button
+        >
+      </a>
+    </Layout>
+  </div>
   <Layout justifyItems="center">
-    <div class="mainText">
-      <Heading>Gifts</Heading>
-      <Text size="S">
-        {config.getGiftInfo()}
-      </Text>
-    </div>
-    <a href={config.getGiftLink()}>
-      <Button width="300px"
-        ><Text size="S">Give a gift via Honeyfund</Text></Button
-      >
-    </a>
     <div class="images">
       <LabeledImage margin="10px" imageName="glong" />
       <LabeledImage margin="10px" imageName="gcloseup" />
@@ -31,12 +35,13 @@
 </Transition>
 
 <style>
-  .mainText {
+  .all {
     color: var(--text-color);
     text-align: center;
-    margin: 0 30px 0 30px;
+    padding: 0 30px 0 30px;
     width: 50%;
     min-width: 360px;
+    margin: auto;
   }
 
   a {
