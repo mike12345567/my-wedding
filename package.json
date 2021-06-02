@@ -14,6 +14,7 @@
   },
   "scripts": {
     "build": "cd packages/site && yarn build",
+    "start": "cd packages/server && yarn start",
     "server:install": "cd packages/server && yarn install",
     "site:install": "cd packages/site && yarn install",
     "bootstrap": "yarn && yarn symlink && yarn server:install && yarn site:install",
