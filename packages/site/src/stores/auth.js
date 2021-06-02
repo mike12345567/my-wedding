@@ -14,7 +14,7 @@ async function updateUser(store, response) {
 export function createAuthStore() {
   const store = writable({
     user: null,
-    loggedIn: false,
+    loggedIn: null,
   })
   return {
     subscribe: store.subscribe,

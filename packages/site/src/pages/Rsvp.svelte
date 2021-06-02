@@ -125,9 +125,7 @@
     {/if}
     <div class="buttons">
       <div class="right">
-        <Button width="200px" bind:disabled on:click={save}>
-          Send RSVP
-        </Button>
+        <Button width="200px" bind:disabled on:click={save}>Send RSVP</Button>
       </div>
     </div>
   </Form>

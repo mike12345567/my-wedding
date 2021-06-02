@@ -8,6 +8,17 @@
     "town": "",
     "postcode": ""
   },
+  "party": {
+    "brideFather": "",
+    "brideMother": "",
+    "groomMother": "",
+    "groomFather": "",
+    "bestMan": "",
+    "chiefMaid": "",
+    "groomsmen": [],
+    "bridesmaids": [],
+    "ushers": []
+  },
   "info": {
     "rsvp": ["Please RSVP below."],
     "gift": [
@@ -15,8 +26,11 @@
       "To support multiline statements"
     ],
     "giftLink": "",
+    "venueLink": "",
     "schedule": [],
     "venue": [],
+    "directions": [],
+    "parking": [],
     "hotel": []
   },
   "meals": [

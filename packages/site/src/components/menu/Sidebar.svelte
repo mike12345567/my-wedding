@@ -7,7 +7,7 @@
   let links = [
     { to: "", text: "Home" },
     { to: "site/venue", text: "Venue" },
-    { to: "site/schedule", text: "Schedule" },
+    { to: "site/theday", text: "On the day" },
     { to: "site/gifts", text: "Gifts" },
     { to: "site/rsvp", text: "RSVP" },
   ]
@@ -67,6 +67,7 @@
       width: 100%;
       border-radius: 0;
       border: none;
+      height: 100%;
     }
   }
 </style>

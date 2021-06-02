@@ -9,9 +9,9 @@
   $: label = config.getImageLabel(imageName)
 </script>
 
-<div style="{margin ? `margin: ${margin}` : ''}">
+<div style={margin ? `margin: ${margin}` : ""}>
   <Text size="XS">{label}</Text>
-  <img style="{size ? `width: ${size}` : ''}" src="{url}" alt="{label}" />
+  <img style={size ? `width: ${size}` : ""} src={url} alt={label} />
 </div>
 
 <style>

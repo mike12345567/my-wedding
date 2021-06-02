@@ -21,10 +21,10 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "@fouita/data-table": "^0.0.2",
     "@zerodevx/svelte-toast": "^0.3.0",
     "dayjs": "^1.10.4",
     "sirv-cli": "^1.0.0",
-    "svelte-routing": "^1.6.0",
-    "svelte-table": "^0.1.17"
+    "svelte-routing": "^1.6.0"
   }
 }

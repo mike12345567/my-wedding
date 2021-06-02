@@ -1,7 +1,7 @@
 export { default as Main } from "./Main.svelte"
 export { default as Gifts } from "./Gifts.svelte"
 export { default as Rsvp } from "./Rsvp.svelte"
-export { default as Schedule } from "./Schedule.svelte"
+export { default as TheDay } from "./TheDay.svelte"
 export { default as Venue } from "./Venue.svelte"
 export { default as Login } from "./Login.svelte"
 export { default as Admin } from "./Admin.svelte"

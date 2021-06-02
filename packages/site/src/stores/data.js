@@ -53,7 +53,7 @@ export function createDataStore() {
         return state
       })
       return json
-    }
+    },
   }
 }
 

@@ -62,10 +62,46 @@ export default {
   getVenueInfo: (full = true) => {
     return getInfoProp("venue", full)
   },
-  getScheduleInfo: (full = true) => {
-    return getInfoProp("schedule", full)
+  getVenueLink: () => {
+    return CONFIG.info.venueLink
+  },
+  getDirections: () => {
+    return getInfoProp("directions", true)
+  },
+  getParkingInfo: () => {
+    return getInfoProp("parking", true)
+  },
+  getDayInfo: (full = true) => {
+    return getInfoProp("theDay", full)
   },
   getGiftLink: () => {
     return CONFIG.info.giftLink
-  }
+  },
+  getBestMan: () => {
+    return CONFIG.party.bestMan
+  },
+  getChiefBridesmaid: () => {
+    return CONFIG.party.chiefMaid
+  },
+  getGroomsmen: () => {
+    return CONFIG.party.groomsmen.join(", ")
+  },
+  getBridesmaids: () => {
+    return CONFIG.party.bridesmaids.join(", ")
+  },
+  getUshers: () => {
+    return CONFIG.party.ushers.join(", ")
+  },
+  getMotherOfGroom: () => {
+    return CONFIG.party.groomMother
+  },
+  getMotherOfBride: () => {
+    return CONFIG.party.brideMother
+  },
+  getFatherOfGroom: () => {
+    return CONFIG.party.groomFather
+  },
+  getFatherOfBride: () => {
+    return CONFIG.party.brideFather
+  },
 }

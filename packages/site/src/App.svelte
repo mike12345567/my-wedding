@@ -1,7 +1,7 @@
 <script>
   import config from "./common/config"
-  import { Router, Route } from "svelte-routing"
-  import { Main, Gifts, Rsvp, Schedule, Venue, Login, Admin } from "./pages"
+  import { Router, Route, navigate } from "svelte-routing"
+  import { Main, Gifts, Rsvp, TheDay, Venue, Login, Admin } from "./pages"
   import { Header } from "./components"
   import { auth } from "./stores"
   import { onMount, setContext } from "svelte"
@@ -14,7 +14,16 @@
 
   export let url = window.location.pathname
 
+  $: checkPath($auth.loggedIn)
+
   setContext("header", new writable({ open: false }))
+
+  function checkPath(loggedIn) {
+    if (loggedIn === false) {
+      navigate("/")
+      console.log("NAVIGATING!")
+    }
+  }
 
   onMount(async () => {
     await auth.self()
@@ -47,7 +56,7 @@
       {#if $auth.loggedIn}
         <Route path="" component="{Main}" />
         <Route path="site/venue" component="{Venue}" />
-        <Route path="site/schedule" component="{Schedule}" />
+        <Route path="site/theday" component="{TheDay}" />
         <Route path="site/gifts" component="{Gifts}" />
         <Route path="site/rsvp" component="{Rsvp}" />
       {:else}
