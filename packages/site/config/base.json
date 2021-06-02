@@ -23,6 +23,9 @@
     "bridesmaids": [],
     "ushers": []
   },
+  "timing": {
+    "ceremonyStart": ""
+  },
   "info": {
     "rsvp": ["Please RSVP below."],
     "gift": [

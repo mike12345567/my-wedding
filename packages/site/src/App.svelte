@@ -40,6 +40,9 @@
       font-family: ${config.getSecondaryFont().name};
       src: url(${config.getSecondaryFont().url});
     }
+    body {
+      background-color: {colors.primary};
+    }
   </style>`
 }
 

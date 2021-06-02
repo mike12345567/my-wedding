@@ -19,10 +19,10 @@
       <div>
         <Heading>Venue</Heading>
         <Text size="S">{config.getVenueInfo()}</Text>
-        <a href={config.getVenueLink()}>
-          <Text size="S">Our Venue</Text>
-        </a>
       </div>
+      <a href={config.getVenueLink()} target="_blank">
+        <Button width="200px">Our Venue</Button>
+      </a>
       <div>
         <SubHeading primary>Hotels</SubHeading>
         {#each hotelInfo as hotel}
@@ -57,7 +57,6 @@
   .image {
     width: 140%;
     margin-left: -25%;
-    margin-bottom: 10%;
   }
 
   .image img {

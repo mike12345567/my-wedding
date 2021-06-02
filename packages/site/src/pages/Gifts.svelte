@@ -19,10 +19,8 @@
           {config.getGiftInfo()}
         </Text>
       </div>
-      <a href={config.getGiftLink()}>
-        <Button width="300px"
-          ><Text size="S">Give a gift via Honeyfund</Text></Button
-        >
+      <a href={config.getGiftLink()} target="_blank">
+        <Button width="300px">Give a gift via Honeyfund</Button>
       </a>
     </Layout>
   </div>

@@ -1,53 +1,10 @@
 <script>
   import { Heading, Transition, Layout, Text, SubHeading } from "../components"
   import config from "../common/config"
+  import { getCombinedParty, getUshers } from "../common/party"
 
-  $: party = getParty()
-
-  function getParty() {
-    const arr = []
-    const chief = config.getChiefBridesmaid(),
-      bestman = config.getBestMan(),
-      groomsmen = config.getGroomsmen(),
-      bridesmaids = config.getBridesmaids(),
-      ushers = config.getUshers(),
-      fatherBride = config.getFatherOfBride(),
-      motherBride = config.getMotherOfBride(),
-      motherGroom = config.getMotherOfGroom(),
-      fatherGroom = config.getFatherOfGroom(),
-      stepFatherGroom = config.getStepFatherOfGroom()
-    if (chief) {
-      arr.push({ title: "Chief bridesmaid", name: chief })
-    }
-    if (bestman) {
-      arr.push({ title: "Best man", name: bestman })
-    }
-    if (groomsmen) {
-      arr.push({ title: "Groomsmen", name: groomsmen })
-    }
-    if (bridesmaids) {
-      arr.push({ title: "Bridesmaids", name: bridesmaids })
-    }
-    if (ushers) {
-      arr.push({ title: "Ushers", name: ushers })
-    }
-    if (fatherBride) {
-      arr.push({ title: "Father of bride", name: fatherBride })
-    }
-    if (motherBride) {
-      arr.push({ title: "Mother of bride", name: motherBride })
-    }
-    if (motherGroom) {
-      arr.push({ title: "Mother of groom", name: motherGroom })
-    }
-    if (stepFatherGroom) {
-      arr.push({ title: "Step father of groom", name: stepFatherGroom })
-    }
-    if (fatherGroom) {
-      arr.push({ title: "Father of groom", name: fatherGroom })
-    }
-    return arr
-  }
+  $: party = getCombinedParty(false)
+  $: ushers = getUshers()
 </script>
 
 <Transition>
@@ -57,21 +14,41 @@
           <Heading>On the day</Heading>
           <SubHeading primary>Schedule</SubHeading>
           <Text>{config.getDayInfo()}</Text>
-          <SubHeading primary>Wedding Party</SubHeading>
         </div>
-        <Text>
-          We want to thank everyone who is able to join us on our big day and
-          here we want to pay special thanks to those people that have helped
-          us make this a reality!
-        </Text>
+        <Text>Ceremony starts at: <b>{config.getCeremonyStart()}</b></Text>
+        <div>
+          <SubHeading primary>Wedding Party</SubHeading>
+          <Text>
+            We want to thank everyone who is able to join us on our big day and
+            here we want to pay special thanks to those people that have helped
+            us make this a reality!
+          </Text>
+        </div>
         <div class="party">
           {#each party as member}
-            <div>
-              <SubHeading size="S" primary>{member.title}</SubHeading>
-              <Text size="S">{member.name}</Text>
-            </div>
+            {#if member}
+              <div>
+                <SubHeading size="S" primary>{member.title}</SubHeading>
+                <Text size="S">{member.name}</Text>
+              </div>
+            {:else}
+              <!-- spacer -->
+              <div>
+                <br>
+                <br>
+              </div>
+            {/if}
           {/each}
         </div>
+        <!-- space ushers separately in the center -->
+        {#if ushers}
+          <div class="ushers">
+            <div>
+              <SubHeading size="S" primary>{ushers.title}</SubHeading>
+              <Text size="S">{ushers.name}</Text>
+            </div>
+          </div>
+        {/if}
     </Layout>
   </div>
 </Transition>
@@ -91,5 +68,9 @@
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 20px;
+  }
+
+  .ushers {
+
   }
 </style>
