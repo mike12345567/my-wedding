@@ -6,7 +6,6 @@
   export let label = null
   export let disabled = false
   export let readonly = false
-  export let error = null
   export let width
 
   const dispatch = createEventDispatcher()
@@ -31,7 +30,7 @@
       {disabled}
       {readonly}
       bind:value
-      on:change={onChange}
+      on:blur={onChange}
       on:click
       on:focus
       on:input

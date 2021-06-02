@@ -13,6 +13,7 @@
     "svelte": "^3.38.2"
   },
   "scripts": {
+    "build": "cd packages/site && yarn build",
     "server:install": "cd packages/server && yarn install",
     "site:install": "cd packages/site && yarn install",
     "bootstrap": "yarn && yarn symlink && yarn server:install && yarn site:install",
