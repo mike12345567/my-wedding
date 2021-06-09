@@ -12,6 +12,7 @@
 
 {#if loggedIn}
   <Sidebar bind:open={$state.open} />
+  <div class="spacing"></div>
   <div class="hamburger">
     <Hamburger bind:open={$state.open} />
   </div>
@@ -27,11 +28,15 @@
     padding: 0;
   }
 
+  .spacing {
+    padding-bottom: 100px;
+  }
+
   .hamburger {
-    position: relative;
+    position: fixed;
     z-index: 1000;
-    padding-top: 35px;
-    margin-left: 35px;
+    top: 35px;
+    left: 35px;
   }
 
   .header {
@@ -54,8 +59,13 @@
       margin-top: 15px;
     }
 
+    .spacing {
+      padding-bottom: 125px;
+    }
+
     .hamburger {
-      padding-bottom: 35px;
+      left: 20px;
+      top: 20px;
     }
   }
 </style>

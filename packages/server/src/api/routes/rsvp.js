@@ -7,18 +7,32 @@ const { getMealTypes } = require("../../constants")
 
 const router = Router()
 
+function canAttendValidation() {
+  return Joi.array().items(
+    Joi.object({
+      name: Joi.string().required(),
+      choice: Joi.string().valid(...getMealTypes()),
+      dietary: Joi.string().optional().allow("", null),
+    }).unknown(false)
+  )
+}
+
+function cantAttendValidation() {
+  return Joi.object({
+    name: Joi.string().required(),
+    cantAttend: Joi.boolean().required()
+  }).unknown(false)
+}
+
 function getRsvpSaveValidation() {
   // prettier-ignore
   return validateMiddleware.create({
     body: Joi.object({
       id: Joi.number().optional(),
       email: Joi.string().required(),
-      guests: Joi.array().items(
-        Joi.object({
-          name: Joi.string().required(),
-          choice: Joi.string().valid(...getMealTypes()),
-          dietary: Joi.string().optional().allow("", null),
-        }).unknown(false)
+      guests: Joi.alternatives().try(
+        canAttendValidation(),
+        cantAttendValidation(),
       ).required()
     }).unknown(false).required(),
   })

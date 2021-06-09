@@ -15,6 +15,8 @@
   import { success, failure } from "../common/toast"
 
   let guestNumber = 1
+  let canAttend = "Yes"
+  let cantAttendName
   let email = ""
   let lastEmail = ""
   let error = null
@@ -59,8 +61,15 @@
   }
 
   async function save() {
+    let guestInput = guests
+    if (canAttend === "No") {
+      guestInput = {
+        cantAttend: true,
+        name: cantAttendName,
+      }
+    }
     try {
-      await data.saveRsvp(email, guests, id)
+      await data.saveRsvp(email, guestInput, id)
       success("RSVP has been sent!")
     } catch (err) {
       failure(err)
@@ -96,32 +105,42 @@
     />
     <Select
       width="70%"
-      label="Number of guests"
-      bind:value={guestNumber}
-      options={[1, 2, 3, 4, 5, 6]}
+      label="Can Attend?"
+      bind:value={canAttend}
+      options={["Yes", "No"]}
     />
-    {#if guestNumber}
-      <div class="guestSection">
-        <Layout gap="S" justifyItems="center">
-          {#each guests as guest}
-            <div class="guest">
-              <Text bold>Guest {guests.indexOf(guest) + 1}</Text>
-              <Input width="100%" label="Name" bind:value={guest.name} />
-              <div class="bottomLine">
-                <Select
-                  width="180px"
-                  label="Meal"
-                  bind:value={guest.choice}
-                  options={["Meat", "Veg"]}
-                />
-                <div class="diet">
-                  <Input label="Dietary notes" bind:value={guest.dietary} />
+    {#if canAttend === "Yes"}
+      <Select
+        width="70%"
+        label="Number of guests"
+        bind:value={guestNumber}
+        options={[1, 2, 3, 4, 5, 6]}
+      />
+      {#if guestNumber}
+        <div class="guestSection">
+          <Layout gap="S" justifyItems="center">
+            {#each guests as guest}
+              <div class="guest">
+                <Text bold>Guest {guests.indexOf(guest) + 1}</Text>
+                <Input width="100%" label="Name" bind:value={guest.name} />
+                <div class="bottomLine">
+                  <Select
+                    width="180px"
+                    label="Meal"
+                    bind:value={guest.choice}
+                    options={["Meat", "Veg"]}
+                  />
+                  <div class="diet">
+                    <Input label="Dietary notes" bind:value={guest.dietary} />
+                  </div>
                 </div>
               </div>
-            </div>
-          {/each}
-        </Layout>
-      </div>
+            {/each}
+          </Layout>
+        </div>
+      {/if}
+    {:else}
+      <Input width="70%" label="Name" bind:value={cantAttendName} />
     {/if}
     <div class="buttons">
       <div class="right">

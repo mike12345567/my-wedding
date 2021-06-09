@@ -8,6 +8,7 @@
   let adminInfo
   $: rows = getRows(adminInfo)
   const head = {
+    attend: "Attending",
     email: "Email",
     name: "Name",
     dietary: "Dietary req",
@@ -28,8 +29,14 @@
     }
     for (let info of fullInfo) {
       const email = info.email
-      for (let guest of info?.guests) {
-        rows.push({ email, ...guest })
+      if (info?.guests?.cantAttend) {
+        // cant attend, just add their name
+        rows.push({ email, name: info.guests.name, attend: "No" })
+      } else {
+        // they can attend, add the guests
+        for (let guest of info?.guests) {
+          rows.push({ email, ...guest, attend: "Yes" })
+        }
       }
     }
     return rows
@@ -37,7 +44,7 @@
 </script>
 
 <div class="outer">
-  <SubHeading>Administration</SubHeading>
+  <SubHeading primary>Administration</SubHeading>
   <div class="inner">
     <DataTable {head} {rows} />
   </div>
@@ -46,7 +53,7 @@
 <style>
   .outer {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 20px;
     text-align: center;
     color: var(--text-color);
   }
