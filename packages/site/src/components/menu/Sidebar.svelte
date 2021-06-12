@@ -63,6 +63,7 @@
 
   .open {
     left: 0;
+    position: fixed;
   }
 
   .createdBy {

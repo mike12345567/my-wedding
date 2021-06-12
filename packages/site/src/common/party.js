@@ -12,6 +12,7 @@ export function getParty() {
     motherGroom = config.getMotherOfGroom(),
     fatherGroom = config.getFatherOfGroom(),
     stepFatherGroom = config.getStepFatherOfGroom(),
+    stepFatherBride = config.getStepFatherOfBride(),
     stepMotherBride = config.getStepMotherOfBride()
   if (chief) {
     bride.push({ title: "Chief bridesmaid", name: chief })
@@ -33,6 +34,9 @@ export function getParty() {
   }
   if (stepMotherBride) {
     bride.push({ title: "Step mother of bride", name: stepMotherBride })
+  }
+  if (stepFatherBride) {
+    bride.push({ title: "Step father of bride", name: stepFatherBride })
   }
   if (motherGroom) {
     groom.push({ title: "Mother of groom", name: motherGroom })

@@ -13,12 +13,18 @@
         <div>
           <Heading>On the day</Heading>
           <SubHeading primary>Schedule</SubHeading>
-          <Text>{config.getDayInfo()}</Text>
+          <Text size="S">{config.getDayInfo()}</Text>
         </div>
-        <Text>Ceremony starts at: <b>{config.getCeremonyStart()}</b></Text>
+        <Layout gap="XS" justifyItems="center">
+          <Text size="S">Guests arriving at: <b>{config.getArrival()}</b></Text>
+          <Text size="S">Ceremony starts at: <b>{config.getCeremonyStart()}</b></Text>
+          <Text size="S">Canapes served at: <b>{config.getCanapesStart()}</b></Text>
+          <Text size="S">Speeches start at: <b>{config.getSpeechesStart()}</b></Text>
+          <Text size="S">Dinner served at: <b>{config.getDinnerStart()}</b></Text>
+        </Layout>
         <div>
           <SubHeading primary>Wedding Party</SubHeading>
-          <Text>
+          <Text size="S">
             We want to thank everyone who is able to join us on our big day and
             here we want to pay special thanks to those people that have helped
             us make this a reality!

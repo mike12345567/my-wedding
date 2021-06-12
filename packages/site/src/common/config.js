@@ -53,8 +53,20 @@ export default {
   getRSVP: (full = true) => {
     return getInfoProp("rsvp", full)
   },
+  getArrival: () => {
+    return CONFIG.timing.arrival
+  },
   getCeremonyStart: () => {
     return CONFIG.timing.ceremonyStart
+  },
+  getCanapesStart: () => {
+    return CONFIG.timing.canapes
+  },
+  getSpeechesStart: () => {
+    return CONFIG.timing.speeches
+  },
+  getDinnerStart: () => {
+    return CONFIG.timing.dinner
   },
   getHotelInfo: (full = true) => {
     return getInfoProp("hotel", full)
