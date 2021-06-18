@@ -51,6 +51,7 @@
     const rsvp = await data.getRsvp(email)
     if (rsvp && rsvp.guests && rsvp.guests.length >= 1) {
       id = rsvp.id
+      phone = rsvp.phone || ""
       tempGuests = rsvp.guests
       guestNumber = tempGuests.length
     }
@@ -121,7 +122,6 @@
         width="70%"
         label="Phone number"
         bind:value={phone}
-        bind:error
       />
       <Select
         width="70%"
