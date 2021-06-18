@@ -11,6 +11,7 @@ exports.rsvp = async builder => {
   return builder.schema.createTable(name, table => {
     table.increments("id")
     table.string("email")
+    table.string("phone")
     table.json("guests")
     table.unique(["email"])
   })

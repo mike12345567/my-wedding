@@ -22,13 +22,14 @@ init().catch(err => {
   process.exit(-1)
 })
 
-exports.saveRsvp = async (email, guests, id = undefined) => {
+exports.saveRsvp = async (email, phone, guests, id = undefined) => {
   if (typeof guests !== "object") {
     throw "Guests must be of type Object"
   }
   if (!id) {
     await CLIENT(TableNames.RSVP).insert({
       email,
+      phone,
       guests: JSON.stringify(guests),
     })
   } else {
@@ -36,6 +37,7 @@ exports.saveRsvp = async (email, guests, id = undefined) => {
       .where({ id })
       .update({
         email,
+        phone,
         guests: JSON.stringify(guests),
       })
   }

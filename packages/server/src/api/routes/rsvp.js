@@ -30,6 +30,7 @@ function getRsvpSaveValidation() {
     body: Joi.object({
       id: Joi.number().optional(),
       email: Joi.string().required(),
+      phone: Joi.string().optional(),
       guests: Joi.alternatives().try(
         canAttendValidation(),
         cantAttendValidation(),

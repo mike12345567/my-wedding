@@ -18,6 +18,7 @@
   let canAttend = "Yes"
   let cantAttendName
   let email = ""
+  let phone = ""
   let lastEmail = ""
   let error = null
   let tempGuests
@@ -46,18 +47,22 @@
     return base
   }
 
-  async function emailChanged() {
-    lastEmail = email
-    if (email && !validateEmail(email)) {
-      error = "Invalid email address"
-      return
-    }
+  async function updateForm() {
     const rsvp = await data.getRsvp(email)
     if (rsvp && rsvp.guests && rsvp.guests.length >= 1) {
       id = rsvp.id
       tempGuests = rsvp.guests
       guestNumber = tempGuests.length
     }
+  }
+
+  async function emailChanged() {
+    lastEmail = email
+    if (email && !validateEmail(email)) {
+      error = "Invalid email address"
+      return
+    }
+    await updateForm()
   }
 
   async function save() {
@@ -69,11 +74,13 @@
       }
     }
     try {
-      await data.saveRsvp(email, guestInput, id)
+      await data.saveRsvp(email, phone, guestInput, id)
       success("RSVP has been sent!")
+      await updateForm()
     } catch (err) {
       failure(err)
     }
+
   }
 </script>
 
@@ -110,6 +117,12 @@
       options={["Yes", "No"]}
     />
     {#if canAttend === "Yes"}
+      <Input
+        width="70%"
+        label="Phone number"
+        bind:value={phone}
+        bind:error
+      />
       <Select
         width="70%"
         label="Number of guests"

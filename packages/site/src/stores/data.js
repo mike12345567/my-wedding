@@ -24,8 +24,8 @@ export function createDataStore() {
         return state
       })
     },
-    async saveRsvp(email, guests, id) {
-      const body = { email, guests }
+    async saveRsvp(email, phone, guests, id) {
+      const body = { email, phone, guests }
       if (id) {
         body.id = id
       }
