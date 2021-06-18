@@ -111,6 +111,11 @@
       on:change={emailChanged}
       bind:error
     />
+    <Input
+      width="70%"
+      label="Phone number"
+      bind:value={phone}
+    />
     <Select
       width="70%"
       label="Can Attend?"
@@ -118,11 +123,6 @@
       options={["Yes", "No"]}
     />
     {#if canAttend === "Yes"}
-      <Input
-        width="70%"
-        label="Phone number"
-        bind:value={phone}
-      />
       <Select
         width="70%"
         label="Number of guests"

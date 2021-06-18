@@ -58,6 +58,7 @@
     margin-top: 20px;
     text-align: center;
     color: var(--text-color);
+    padding-bottom: 200px;
   }
   .inner {
     margin: auto;
