@@ -29,11 +29,8 @@
       return rows
     }
     for (let info of fullInfo) {
-      if (!info || !info.guests || Object.keys(info.guests).length === 0) {
-        continue
-      }
-      const email = info.email
-      const phone = info.phone
+      const email = info.email || ""
+      const phone = info.phone || ""
       if (info?.guests?.cantAttend) {
         // cant attend, just add their name
         rows.push({ email, name: info.guests.name, attend: "No" })
