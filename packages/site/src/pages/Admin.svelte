@@ -29,7 +29,7 @@
       return rows
     }
     for (let info of fullInfo) {
-      const email = info.email || ""
+      const email = (info.email || "").toLowerCase()
       const phone = info.phone || ""
       if (info?.guests?.cantAttend) {
         // cant attend, just add their name
@@ -55,7 +55,7 @@
 
 <div class="outer">
   <SubHeading primary>Administration</SubHeading>
-  <SubHeading>Total: {rows.length}</SubHeading>
+  <SubHeading size="XS">Total: {rows.length}</SubHeading>
   <div class="inner">
     <DataTable {head} {rows} />
   </div>
