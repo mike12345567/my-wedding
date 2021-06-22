@@ -1,5 +1,5 @@
 <script>
-  import { SubHeading } from "../components"
+  import { Heading, SubHeading } from "../components"
   import { data } from "../stores"
   import { onMount } from "svelte"
   import { navigate } from "svelte-routing"
@@ -41,12 +41,21 @@
         }
       }
     }
-    return rows
+    return rows.sort((a, b) => {
+      if (a.email < b.email) {
+        return -1
+      }
+      if (a.email < b.email) {
+        return 1
+      }
+      return 0
+    })
   }
 </script>
 
 <div class="outer">
   <SubHeading primary>Administration</SubHeading>
+  <SubHeading>Total: {rows.length}</SubHeading>
   <div class="inner">
     <DataTable {head} {rows} />
   </div>
